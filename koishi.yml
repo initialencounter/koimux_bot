@@ -37,4 +37,4 @@ plugins:
     ~adapter-kook: {}
     ~adapter-feishu: {}
     gocqhttp: {}
-  ~davinci: {}
+  ~davinci-003: {}
