@@ -73,7 +73,7 @@ npm i -g yarn
 
 ```
 
-cd koimux
+cd koimux_bot
 
 ```
 
