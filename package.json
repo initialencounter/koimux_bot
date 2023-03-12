@@ -32,6 +32,6 @@
     "koishi-plugin-desktop": "^0.0.3",
     "koishi-plugin-gocqhttp": "^3.3.4",
     "koishi-plugin-puppeteer": "^3.4.11",
-    "koishi-plugin-davinci-003": "1.4.0"
+    "koishi-plugin-davinci-003": "1.4.2"
   }
 }
