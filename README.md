@@ -2,6 +2,12 @@
 
 本仓库包含了 Koishi 的模板项目。
 
+
+## termux一键脚本
+```
+bash -c "$(curl https://gitee.com/initencunter/koimux_bot/raw/master/main.sh)"
+```
+
 ## 使用教程
 
 <https://koishi.chat/manual/starter/boilerplate.html>
