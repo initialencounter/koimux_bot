@@ -7,8 +7,6 @@ plugins:
     rate-limit: {}
     locales: {}
     commands: {}
-    ~admin: {}
-    ~bind: {}
   group:console:
     analytics: {}
     console:
@@ -27,14 +25,7 @@ plugins:
     status: {}
   group:database:
     database-sqlite: {}
-    ~database-mysql: {}
-    ~database-mongo: {}
     assets-local: {}
   group:adapter:
     ~adapter-onebot: {}
-    ~adapter-discord: {}
-    ~adapter-telegram: {}
-    ~adapter-kook: {}
-    ~adapter-feishu: {}
-    gocqhttp: {}
   ~davinci-003: {}
