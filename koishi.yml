@@ -26,3 +26,4 @@ plugins:
   group:adapter:
     ~adapter-onebot: {}
   ~davinci-003: {}
+  ~open-vits: {}
