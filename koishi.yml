@@ -12,10 +12,7 @@ plugins:
     console:
       open: true
     dataview: {}
-    desktop:
-      $if: env.KOISHI_AGENT?.includes('Desktop')
     logger: {}
-    insight: {}
     market:
       registry:
         endpoint: https://registry.npmmirror.com
