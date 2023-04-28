@@ -33,7 +33,7 @@
     "koishi-plugin-loader": "1.0.0",
     "koishi-plugin-open-vits": "1.4.0",
     "koishi-plugin-puppeteer": "^3.5.0",
-    "koishi-plugin-shutdown": "0.2.1",
-    "koishi-plugin-spawn": "1.0.4"
+    "koishi-plugin-spawn": "1.0.4",
+    "koishi-plugin-shutdown": "0.2.1"
   }
 }

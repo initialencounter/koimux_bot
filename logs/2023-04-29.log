@@ -122,3 +122,52 @@
 [38;5;8m2023-04-29 02:22:51[0m [I] [38;5;204;1massets[0m missing config "selfUrl", fallback to "file:" scheme
 [38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m server listening at [38;5;78mhttp://0.0.0.0:5140[0m
 [38;5;8m2023-04-29 02:23:09[0m [I] [38;5;129;1mloader[0m JSON 文件已成功更新
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m [38;5;15;1mKoishi/4.12.6[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:basic[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mhelp[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mrate-limit[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlocales[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mcommands[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:entry[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78manalytics[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:console[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mconsole[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdataview[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlogger[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mmarket[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mstatus[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78msandbox[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:database[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdatabase-sqlite[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78massets-local[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mloader:4ovyml[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:adapter[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mspawn:7pollv[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mshutdown:1y2dzq[0m
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;204;1massets[0m missing config "selfUrl", fallback to "file:" scheme
+[38;5;8m2023-04-29 02:25:38[0m [I] [38;5;78;1mapp[0m server listening at [38;5;78mhttp://0.0.0.0:5140[0m
+[38;5;8m2023-04-29 02:25:45[0m [I] [38;5;129;1mloader[0m JSON 文件已成功更新
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mhelp[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlocales[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mconsole[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mrate-limit[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78manalytics[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mcommands[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdataview[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:console[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlogger[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78msandbox[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mmarket[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:entry[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:basic[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:database[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdatabase-sqlite[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78massets-local[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m [38;5;15;1mKoishi/4.12.6[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mstatus[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:adapter[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mloader:4ovyml[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mshutdown:1y2dzq[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mspawn:7pollv[0m
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;204;1massets[0m missing config "selfUrl", fallback to "file:" scheme
+[38;5;8m2023-04-29 02:26:12[0m [I] [38;5;78;1mapp[0m server listening at [38;5;78mhttp://0.0.0.0:5140[0m
