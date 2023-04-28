@@ -1,0 +1,124 @@
+[38;5;8m2023-04-29 02:05:36[0m [I] [38;5;78;1mapp[0m [38;5;15;1mKoishi/4.12.6[0m
+[38;5;8m2023-04-29 02:05:36[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:entry[0m
+[38;5;8m2023-04-29 02:05:36[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:basic[0m
+[38;5;8m2023-04-29 02:05:36[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mrate-limit[0m
+[38;5;8m2023-04-29 02:05:36[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlocales[0m
+[38;5;8m2023-04-29 02:05:36[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mcommands[0m
+[38;5;8m2023-04-29 02:05:36[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:console[0m
+[38;5;8m2023-04-29 02:05:36[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78manalytics[0m
+[38;5;8m2023-04-29 02:05:36[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mhelp[0m
+[38;5;8m2023-04-29 02:05:36[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mconsole[0m
+[38;5;8m2023-04-29 02:05:36[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdataview[0m
+[38;5;8m2023-04-29 02:05:36[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mmarket[0m
+[38;5;8m2023-04-29 02:05:36[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlogger[0m
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78msandbox[0m
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mstatus[0m
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:database[0m
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:adapter[0m
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78massets-local[0m
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdatabase-sqlite[0m
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;204;1massets[0m missing config "selfUrl", fallback to "file:" scheme
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;78;1mapp[0m server listening at [38;5;78mhttp://0.0.0.0:5140[0m
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;209;1msqlite[0m auto creating table [38;5;209muser[0m
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;209;1msqlite[0m auto creating table [38;5;209mbinding[0m
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;209;1msqlite[0m auto creating table [38;5;209mstats_daily[0m
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;209;1msqlite[0m auto creating table [38;5;209mstats_hourly[0m
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;209;1msqlite[0m auto creating table [38;5;209mstats_longterm[0m
+[38;5;8m2023-04-29 02:05:37[0m [I] [38;5;209;1msqlite[0m auto creating table [38;5;209mchannel[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:entry[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:basic[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m [38;5;15;1mKoishi/4.12.6[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mhelp[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mrate-limit[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlocales[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mcommands[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:console[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mconsole[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78manalytics[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdataview[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlogger[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mmarket[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78msandbox[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:database[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78massets-local[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mstatus[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdatabase-sqlite[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;204;1massets[0m missing config "selfUrl", fallback to "file:" scheme
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:adapter[0m
+[38;5;8m2023-04-29 02:09:02[0m [I] [38;5;78;1mapp[0m server listening at [38;5;78mhttp://0.0.0.0:5140[0m
+[38;5;8m2023-04-29 02:13:54[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mloader:4ovyml[0m
+[38;5;8m2023-04-29 02:14:22[0m [I] [38;5;129;1mloader[0m JSON 文件已成功更新
+[38;5;8m2023-04-29 02:14:49[0m [I] [38;5;178;1mmarket[0m [1/4] Resolving packages...
+[38;5;8m2023-04-29 02:14:49[0m [I] [38;5;178;1mmarket[0m [2/4] Fetching packages...
+[38;5;8m2023-04-29 02:14:50[0m [W] [38;5;178;1mmarket[0m warning "@koishijs/plugin-adapter-onebot > @satorijs/adapter-onebot@5.6.7" has unmet peer dependency "@satorijs/satori@^2.3.2".
+[38;5;8m2023-04-29 02:14:50[0m [I] [38;5;178;1mmarket[0m [3/4] Linking dependencies...
+[38;5;8m2023-04-29 02:14:50[0m [W] [38;5;178;1mmarket[0m warning "@koishijs/plugin-database-sqlite > @minatojs/driver-sqlite@3.4.3" has unmet peer dependency "@minatojs/core@^2.3.1".
+[38;5;8m2023-04-29 02:14:50[0m [W] [38;5;178;1mmarket[0m warning "@koishijs/plugin-database-sqlite > @minatojs/driver-sqlite > @minatojs/sql-utils@4.0.3" has unmet peer dependency "@minatojs/core@^2.3.1".
+[38;5;8m2023-04-29 02:14:51[0m [I] [38;5;178;1mmarket[0m [4/4] Building fresh packages...
+[38;5;8m2023-04-29 02:14:51[0m [I] [38;5;178;1mmarket[0m success Saved lockfile.
+[38;5;8m2023-04-29 02:15:10[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mshutdown:1y2dzq[0m
+[38;5;8m2023-04-29 02:15:28[0m [I] [38;5;178;1mmarket[0m [1/4] Resolving packages...
+[38;5;8m2023-04-29 02:15:29[0m [I] [38;5;178;1mmarket[0m [2/4] Fetching packages...
+[38;5;8m2023-04-29 02:15:29[0m [I] [38;5;178;1mmarket[0m [3/4] Linking dependencies...
+[38;5;8m2023-04-29 02:15:29[0m [W] [38;5;178;1mmarket[0m warning "@koishijs/plugin-database-sqlite > @minatojs/driver-sqlite@3.4.3" has unmet peer dependency "@minatojs/core@^2.3.1".
+[38;5;8m2023-04-29 02:15:29[0m [W] [38;5;178;1mmarket[0m warning "@koishijs/plugin-adapter-onebot > @satorijs/adapter-onebot@5.6.7" has unmet peer dependency "@satorijs/satori@^2.3.2".
+[38;5;8m2023-04-29 02:15:29[0m [W] [38;5;178;1mmarket[0m warning "@koishijs/plugin-database-sqlite > @minatojs/driver-sqlite > @minatojs/sql-utils@4.0.3" has unmet peer dependency "@minatojs/core@^2.3.1".
+[38;5;8m2023-04-29 02:15:29[0m [I] [38;5;178;1mmarket[0m [4/4] Building fresh packages...
+[38;5;8m2023-04-29 02:15:29[0m [I] [38;5;178;1mmarket[0m success Saved lockfile.
+[38;5;8m2023-04-29 02:17:00[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mspawn:7pollv[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m [38;5;15;1mKoishi/4.12.6[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:basic[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:entry[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mhelp[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlocales[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mcommands[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mrate-limit[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78manalytics[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:console[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdataview[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mconsole[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlogger[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mmarket[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78msandbox[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mstatus[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:database[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdatabase-sqlite[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78massets-local[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mloader:4ovyml[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mspawn:7pollv[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:adapter[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mshutdown:1y2dzq[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;204;1massets[0m missing config "selfUrl", fallback to "file:" scheme
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;78;1mapp[0m server listening at [38;5;78mhttp://0.0.0.0:5140[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;209;1msqlite[0m auto creating table [38;5;209muser[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;209;1msqlite[0m auto creating table [38;5;209mbinding[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;209;1msqlite[0m auto creating table [38;5;209mchannel[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;209;1msqlite[0m auto creating table [38;5;209mstats_hourly[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;209;1msqlite[0m auto creating table [38;5;209mstats_daily[0m
+[38;5;8m2023-04-29 02:17:35[0m [I] [38;5;209;1msqlite[0m auto creating table [38;5;209mstats_longterm[0m
+[38;5;8m2023-04-29 02:18:49[0m [I] [38;5;129;1mloader[0m JSON 文件已成功更新
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mhelp[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mrate-limit[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlocales[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mcommands[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:console[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78manalytics[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mconsole[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdataview[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlogger[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:entry[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mmarket[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:basic[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m [38;5;15;1mKoishi/4.12.6[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mstatus[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78msandbox[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:database[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78massets-local[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdatabase-sqlite[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:adapter[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mloader:4ovyml[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mshutdown:1y2dzq[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mspawn:7pollv[0m
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;204;1massets[0m missing config "selfUrl", fallback to "file:" scheme
+[38;5;8m2023-04-29 02:22:51[0m [I] [38;5;78;1mapp[0m server listening at [38;5;78mhttp://0.0.0.0:5140[0m
+[38;5;8m2023-04-29 02:23:09[0m [I] [38;5;129;1mloader[0m JSON 文件已成功更新

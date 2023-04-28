@@ -1,7 +1,6 @@
 port: 5140
 maxPort: 5149
 host: 0.0.0.0
-
 plugins:
   group:basic:
     help: {}
@@ -28,3 +27,6 @@ plugins:
     ~adapter-onebot: {}
   ~davinci-003: {}
   ~open-vits: {}
+  loader:4ovyml: {}
+  shutdown:1y2dzq: {}
+  spawn:7pollv: {}
