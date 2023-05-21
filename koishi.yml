@@ -13,6 +13,7 @@ plugins:
       open: true
     dataview: {}
     logger: {}
+    config: {}
     market:
       registry:
         endpoint: https://registry.npmmirror.com
@@ -25,6 +26,7 @@ plugins:
     assets-local: {}
   group:adapter:
     ~adapter-onebot: {}
+    ~gocqhttp: {}
   ~davinci-003: {}
   ~open-vits: {}
   loader:4ovyml: {}
