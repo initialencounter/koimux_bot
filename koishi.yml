@@ -23,7 +23,6 @@ plugins:
     status: {}
   group:database:
     database-sqlite: {}
-    assets-local: {}
   group:adapter:
     ~adapter-onebot: {}
     ~gocqhttp: {}
