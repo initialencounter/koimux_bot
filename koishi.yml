@@ -1,6 +1,5 @@
-port: 5140
+port: 5141
 maxPort: 5149
-host: 0.0.0.0
 plugins:
   group:basic:
     help: {}
@@ -24,11 +23,14 @@ plugins:
   group:database:
     database-sqlite: {}
   group:adapter:
-    ~adapter-onebot: {}
-    ~gocqhttp: {}
+    adapter-onebot:
+      gocqhttp:
+        enabled: true
+        password: xxx
+      selfId: '123456'
+    gocqhttp-dev:7gg7no: {}
   ~davinci-003: {}
   ~open-vits: {}
   loader:4ovyml: {}
   shutdown:1y2dzq: {}
   spawn:7pollv: {}
-  explorer:ht057q: {}
