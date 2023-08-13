@@ -14,7 +14,7 @@ pkg upgrade;
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/install_debian.sh)"
 ```
 
-# 下文所有命令只适用于 proot容器 Debian-10 和CentOS-7 中运行
+# 下文所有命令只适用于在 proot 容器中运行
 
 [如何安装并进入 proot 容器](./install_debian.md)
 
