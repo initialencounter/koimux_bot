@@ -89,6 +89,7 @@ fi
 
 # 启动qsign
 screen -wipe
+cd /root/unidbg-fetch-qsign-1.1.6
 if screen -list | grep -q "qsignServer"; then
     screen -S qsignServer -X quit
 else
