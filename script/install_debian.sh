@@ -10,6 +10,7 @@ sys_name="debian-sid"
 BAGNAME="rootfs.tar.xz"
 DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default/20230812_05%3A24/rootfs.tar.xz"
 
+cd ~
 # 检测是否安装过
 if [ -f "$sys_name-$AH/root/.bashrc" ]; then
     echo -e "现在可以执行 ./$sys_name-$AH.sh 运行 $sys_name-$AH系统"
@@ -99,4 +100,5 @@ echo -e "现在可以执行 ./$sys_name-$AH.sh 运行 $sys_name-$AH系统"
 curl -O https://gitee.com/initencunter/koimux_bot/raw/master/script/all.sh
 mv all.sh $sys_name-$AH/root/start.sh
 echo "bash start.sh" >> $sys_name-$AH/root/.bashrc
+echo "$sys_name-$AH.sh" > .bashrc
 bash ./$sys_name-$AH.sh
