@@ -7,9 +7,9 @@ fi
 
 echo 正在安装依赖
 pkg install neofetch wget aria2 expect proot -y
-echo "即将下载安装centos"
-sys_name=centos
-DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/centos/9-Stream/arm64/default/20230809_07%3A08/rootfs.tar.xz"
+echo "即将下载安装debian10"
+sys_name=debian10
+DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/debian/buster/arm64/default/20230812_05%3A24/rootfs.tar.xz"
 
 AH="arm64"
 BAGNAME="rootfs.tar.xz"
