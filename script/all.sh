@@ -91,15 +91,13 @@ fi
 screen -wipe
 if screen -list | grep -q "qsignServer"; then
     screen -S qsignServer -X quit
-    screen -dmS qsignServer
-    screen -S qsignServer -p 0 -X stuff "cd /root/unidbg-fetch-qsign-1.1.6; bash bin/unidbg-fetch-qsign --basePath=txlib/8.9.63$(printf \\r)"
 else
     # 启动 qsinServer
     echo "正在启动 qsinServer"
-    screen -dmS qsignServer
-    screen -S qsignServer -p 0 -X stuff "cd /root/unidbg-fetch-qsign-1.1.6; bash bin/unidbg-fetch-qsign --basePath=txlib/8.9.63$(printf \\r)"
-    echo "qsinServer,已启动，输入screen -r qsignSercer查看输出，ctrl+a+d挂起"
 fi
+screen -dmS qsignServer
+screen -S qsignServer -p 0 -X stuff "cd /root/unidbg-fetch-qsign-1.1.6; bash bin/unidbg-fetch-qsign --basePath=txlib/8.9.63$(printf \\r)"
+echo "qsinServer,已启动，输入screen -r qsignSercer查看输出，ctrl+a+d挂起"
 
 # 启动koishi
 if command -v npm &> /dev/null; then
