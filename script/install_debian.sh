@@ -5,15 +5,23 @@ else
     exit 1
 fi
 
-echo 正在安装依赖
+AH="arm64"
+sys_name="debian10"
+BAGNAME="rootfs.tar.xz"
+DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default/20230812_05%3A24/rootfs.tar.xz"
+
+# 检测是否安装过
+if [ -f "$sys_name-$AH/root/.bashrc"]; then
+    echo -e "现在可以执行 ./$sys_name-$AH.sh 运行 $sys_name-$AH系统"
+    exit 1
+else
+    echo 正在安装依赖
+fi
+
+mkdir $sys_name-$AH
 pkg install neofetch wget aria2 expect proot -y
 echo "即将下载安装debian10"
-sys_name=debian10
-DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/debian/buster/arm64/default/20230812_05%3A24/rootfs.tar.xz"
 
-AH="arm64"
-BAGNAME="rootfs.tar.xz"
-mkdir $sys_name-$AH
 
 if [ -e ${BAGNAME} ]; then
     tar xf rootfs.tar.xz -C $sys_name-$AH
