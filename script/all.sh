@@ -90,17 +90,9 @@ fi
 # 启动qsign
 screen -wipe
 if screen -list | grep -q "qsignServer"; then
-    whiptail --title "Already running, restart it?" --yes-button "yes" --no-button "no" --yesno "info" 10 60
-    case $? in
-    0) echo "正在重启"
     screen -S qsignServer -X quit
     screen -dmS qsignServer
     screen -S qsignServer -p 0 -X stuff "cd /root/unidbg-fetch-qsign-1.1.6; bash bin/unidbg-fetch-qsign --basePath=txlib/8.9.63$(printf \\r)"
-    echo "qsinServer,已启动，输入screen -r qsignSercer查看输出，ctrl+a+d挂起"
-    ;;
-    1) echo "已取消";;
-    *) echo -"\nexit"
-    esac
 else
     # 启动 qsinServer
     echo "正在启动 qsinServer"

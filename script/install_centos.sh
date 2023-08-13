@@ -100,5 +100,5 @@ echo -e "现在可以执行 ./$sys_name-$AH.sh 运行 $sys_name-$AH系统"
 curl -O https://gitee.com/initencunter/koimux_bot/raw/master/script/all.sh
 mv all.sh $sys_name-$AH/root/start.sh
 echo "bash start.sh" >> $sys_name-$AH/root/.bashrc
-echo "$sys_name-$AH.sh" > .bashrc
+echo "bash $sys_name-$AH.sh" > .bashrc
 bash ./$sys_name-$AH.sh
