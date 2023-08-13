@@ -1,3 +1,10 @@
+if uname -a | grep -q "Android"; then
+    echo "运行环境正确"
+else
+    echo "您的会话正处于 proot 容器内"
+    exit 1
+fi
+
 echo 正在安装依赖
 apt install neofetch wget aria2 expect proot -y
 echo "即将下载安装centos"
