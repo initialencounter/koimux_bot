@@ -6,7 +6,7 @@ else
 fi
 
 AH="arm64"
-sys_name="debian_sid"
+sys_name="debian-sid"
 BAGNAME="rootfs.tar.xz"
 DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default/20230812_05%3A24/rootfs.tar.xz"
 
@@ -20,7 +20,7 @@ fi
 
 mkdir $sys_name-$AH
 pkg install neofetch wget aria2 proot -y
-echo "即将下载安装debian10"
+echo "即将下载安装debian-sid"
 
 
 if [ -e ${BAGNAME} ]; then

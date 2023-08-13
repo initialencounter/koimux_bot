@@ -21,4 +21,5 @@ else
     rm -rf unidbg-fetch-qsign-1.1.6
     curl -O https://ghproxy.com/https://github.com/fuqiuluo/unidbg-fetch-qsign/releases/download/1.1.6/unidbg-fetch-qsign-1.1.6.zip
     unzip unidbg-fetch-qsign-1.1.6.zip
+    rm -f unidbg-fetch-qsign-1.1.6.zip
 fi
