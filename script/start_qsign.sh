@@ -37,9 +37,9 @@ else
     rm jdk-20.0.2 -rf
     tar -zxvf jdk-20_linux-aarch64_bin.tar.gz
     rm jdk-20_linux-aarch64_bin.tar.gz -f
-    echo "export PATH=\$PATH:/usr/local/jdk-20.0.2/bin" >> ~/.bashrc
-    echo "export JAVA_HOME=/usr/local/jdk-20.0.2" >> ~/.bashrc
-    source ~/.bashrc
+    echo "export PATH=\$PATH:/usr/local/jdk-20.0.2/bin" >> /etc/profile
+    echo "export JAVA_HOME=/usr/local/jdk-20.0.2" >> /etc/profile
+    source /etc/profile
     if command -v java &> /dev/null; then
         echo java 安装成功
     else
