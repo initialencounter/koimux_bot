@@ -75,7 +75,7 @@ else
 fi
 
 # 安装koishi
-if [ -f "/root/koimux_bot/package.json" ]; then
+if [ -f "/root/koimux_bot/node_modules/.bin/koishi" ]; then
     echo "koishi 已安装，在 /root/koimux_bot 目录"
 else
     echo "正在安装 koishi"
