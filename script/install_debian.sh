@@ -19,7 +19,7 @@ else
 fi
 
 mkdir $sys_name-$AH
-pkg install neofetch wget aria2 expect proot -y
+pkg install neofetch wget aria2 proot -y
 echo "即将下载安装debian10"
 
 
@@ -96,6 +96,7 @@ else
 fi
 echo -e "现在可以执行 ./$sys_name-$AH.sh 运行 $sys_name-$AH系统"
 
-echo "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/all.sh)" > $sys_name-$AH/root/start.sh
+curl -O https://gitee.com/initencunter/koimux_bot/raw/master/script/all.sh
+mv all.sh $sys_name-$AH/root/start.sh
 echo "bash start.sh" >> $sys_name-$AH/root/.bashrc
 bash ./$sys_name-$AH.sh
