@@ -14,7 +14,7 @@ DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/centos/9-Stream/arm64/def
 
 
 # 检测是否安装过
-if [ -f "$sys_name-$AH/root/.bashrc"]; then
+if [ -f "$sys_name-$AH/root/.bashrc" ]; then
     echo -e "现在可以执行 ./$sys_name-$AH.sh 运行 $sys_name-$AH系统"
     exit 1
 else
