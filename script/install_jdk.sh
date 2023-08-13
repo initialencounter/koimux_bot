@@ -1,4 +1,20 @@
-# 该脚本只适用于arm64架构
+
+if uname -a | grep -q "Android"; then
+    echo "当前会话不处于proot，请在proot容器内运行该脚本"
+    echo "请联系作者"
+    exit 1
+else
+    echo "您的会话正处于 proot 容器内"
+fi
+
+arch=$(uname -m)
+if [[ $arch == "aarch64" ]]; then
+    echo "当前系统是ARMv8架构"
+else
+    echo "该脚本只适用于AMRv8架构"
+    exit 1
+fi
+
 
 echo "正在安装依赖"
 if command -v tar &> /dev/null; then
@@ -24,4 +40,9 @@ else
     echo "export PATH=\$PATH:/usr/local/jdk-20.0.2/bin" >> ~/.bashrc
     echo "export JAVA_HOME=/usr/local/jdk-20.0.2" >> ~/.bashrc
     source ~/.bashrc
+    if command -v java &> /dev/null; then
+        echo java 安装成功
+    else
+        echo java 安装失败
+    fi
 fi
