@@ -4,7 +4,26 @@ if command -v yum &> /dev/null; then
 else
     apt install git -y
 fi 
-
+# xz
+if command -v xz &> /dev/null; then
+    echo "xz 已安装"
+else
+    if command -v yum &> /dev/null; then
+        yum install xz -y
+    else
+        apt install xz-utils -y
+    fi
+fi
+# tar
+if command -v tar &> /dev/null; then
+    echo "tar 已安装"
+else
+    if command -v yum &> /dev/null; then
+        yum install tar -y
+    else
+        apt install tar -y
+    fi
+fi
 if command -v npm &> /dev/null; then
     echo "npm 已安装"
 else
@@ -22,13 +41,13 @@ else
 fi
 
 echo 5秒后开始重装koishi,数据将丢失！！
-sleep(1)
+sleep 1
 echo 4秒后开始重装koishi,数据将丢失！！
-sleep(1)
+sleep 1
 echo 3秒后开始重装koishi,数据将丢失！！
-sleep(1)
+sleep 1
 echo 2秒后开始重装koishi,数据将丢失！！
-sleep(1)
+sleep 1
 echo 1秒后开始重装koishi,数据将丢失！！
 
 echo "正在重装 koishi"
