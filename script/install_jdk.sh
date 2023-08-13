@@ -23,7 +23,7 @@ else
     if command -v yum &> /dev/null; then
         yum install tar -y
     else
-        apt install tar -y
+        apt install tar curl -y
     fi
 fi
 

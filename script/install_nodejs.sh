@@ -22,7 +22,7 @@ else
     if command -v yum &> /dev/null; then
         yum install xz -y
     else
-        apt install xz-utils -y
+        apt install xz-utils curl -y
     fi
 fi
 # tar

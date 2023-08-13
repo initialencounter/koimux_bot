@@ -9,7 +9,7 @@ fi
 if command -v yum &> /dev/null; then
     yum install unzip -y
 else
-    apt install unzip -y
+    apt install unzip curl -y
 fi 
 
 

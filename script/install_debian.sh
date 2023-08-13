@@ -6,7 +6,7 @@ else
 fi
 
 AH="arm64"
-sys_name="debian10"
+sys_name="debian_sid"
 BAGNAME="rootfs.tar.xz"
 DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default/20230812_05%3A24/rootfs.tar.xz"
 

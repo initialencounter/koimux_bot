@@ -23,7 +23,7 @@ else
     if command -v yum &> /dev/null; then
         yum install git -y
     else
-        apt install git -y
+        apt install git curl -y
     fi
 fi
 # xz

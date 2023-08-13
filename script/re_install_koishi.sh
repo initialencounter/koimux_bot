@@ -18,7 +18,7 @@ echo "正在安装依赖"
 if command -v yum &> /dev/null; then
     yum install git -y
 else
-    apt install git -y
+    apt install git curl -y
 fi 
 # xz
 if command -v xz &> /dev/null; then

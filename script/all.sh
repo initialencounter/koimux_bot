@@ -22,7 +22,7 @@ if command -v yum &> /dev/null; then
         yum install screen newt -y
 
     else
-        apt install tar xz-utils screen git unzip whiptail -y
+        apt install tar xz-utils screen git unzip whiptail curl -y
     fi
 
 # 安装java
