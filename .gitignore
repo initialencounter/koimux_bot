@@ -3,6 +3,7 @@ dist
 accounts
 external
 logs
+data
 
 yarn.lock
 package-lock.json
