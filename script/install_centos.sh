@@ -10,7 +10,7 @@ echo "即将下载安装centos"
 sys_name=centos
 AH="arm64"
 BAGNAME="rootfs.tar.xz"
-DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default/20230822_05%3A24/rootfs.tar.xz"
+DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/centos/9-Stream/arm64/default/20230822_00%3A20/rootfs.tar.xz"
 
 cd ~
 # 检测是否安装过
