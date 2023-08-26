@@ -64,15 +64,15 @@ else
 fi
 
 # 安装qsign
-if [ -f "/root/unidbg-fetch-qsign-1.1.6/txlib/8.9.63/config.json" ]; then
+if [ -f "/root/unidbg-fetch-qsign-1.1.9/txlib/8.9.63/config.json" ]; then
     echo qsign已安装
 else
     cd /root
-    rm -f unidbg-fetch-qsign-1.1.6.zip
-    rm -rf unidbg-fetch-qsign-1.1.6
-    curl -O https://ghproxy.com/https://github.com/fuqiuluo/unidbg-fetch-qsign/releases/download/1.1.6/unidbg-fetch-qsign-1.1.6.zip
+    rm -rf unidbg-fetch-qsign*
+    curl -o unidbg-fetch-qsign-1.1.6.zip https://ghproxy.com/https://github.com/fuqiuluo/unidbg-fetch-qsign/releases/download/1.1.9/unidbg-fetch-qsign.3.zip
     unzip unidbg-fetch-qsign-1.1.6.zip
-    rm -f unidbg-fetch-qsign-1.1.6.zip
+    unzip unidbg-fetch-qsign-1.1.9.zip
+    rm -f *.zip
 fi
 
 # 安装koishi
@@ -89,7 +89,7 @@ fi
 
 # 启动qsign
 screen -wipe
-cd /root/unidbg-fetch-qsign-1.1.6
+cd /root/unidbg-fetch-qsign-1.1.9
 if screen -list | grep -q "qsignServer"; then
     screen -S qsignServer -X quit
 else
@@ -97,7 +97,7 @@ else
     echo "正在启动 qsinServer"
 fi
 screen -dmS qsignServer
-screen -S qsignServer -p 0 -X stuff "cd /root/unidbg-fetch-qsign-1.1.6; bash bin/unidbg-fetch-qsign --basePath=txlib/8.9.63$(printf \\r)"
+screen -S qsignServer -p 0 -X stuff "cd /root/unidbg-fetch-qsign-1.1.9; bash bin/unidbg-fetch-qsign --basePath=txlib/8.9.63$(printf \\r)"
 echo "qsinServer,已启动，输入screen -r qsignSercer查看输出，ctrl+a+d挂起"
 
 # 启动koishi

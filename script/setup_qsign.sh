@@ -13,7 +13,7 @@ else
 fi 
 
 
-if [ -f "/root/unidbg-fetch-qsign-1.1.6/txlib/8.9.63/config.json" ]; then
+if [ -f "/root/unidbg-fetch-qsign-1.1.9/txlib/8.9.63/config.json" ]; then
     echo qsign已安装
 else
     cd /root
