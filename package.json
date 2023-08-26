@@ -31,11 +31,10 @@
     "koishi": "4.14.1",
     "koishi-plugin-assets-local": "3.1.0",
     "koishi-plugin-davinci-003": "6.1.0",
-    "koishi-plugin-gocqhttp-dev": "^1.1.1-dev-0.0.5",
+    "koishi-plugin-gocqhttp-dev": "^1.1.1-dev-0.1.1",
     "koishi-plugin-loader": "1.0.0",
     "koishi-plugin-open-vits": "1.6.1",
     "koishi-plugin-puppeteer": "^3.5.0",
-    "koishi-plugin-qsign": "^1.0.8",
     "koishi-plugin-shutdown": "0.3.0",
     "koishi-plugin-spawn": "1.0.4"
   }
