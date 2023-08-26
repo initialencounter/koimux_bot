@@ -8,8 +8,17 @@ fi
 AH="arm64"
 sys_name="debian-sid"
 BAGNAME="rootfs.tar.xz"
-DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default/20230822_05%3A24/rootfs.tar.xz"
 
+curl -o default.html "https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default"
+target=$(grep -m 1 -o '<td class="link"><a href=".*" title="' "default.html"| sed 's/<[^>]*>//g')
+date="${target:9:-10}"
+rm -rf default.html
+DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default/$date/rootfs.tar.xz"
+echo "======================================="
+echo "==============开始下载================="
+
+echo $DEF_CUR
+echo "======================================="
 cd ~
 # 检测是否安装过
 if [ -f "$sys_name-$AH/root/.bashrc" ]; then
