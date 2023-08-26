@@ -6,21 +6,10 @@ else
 fi
 
 
-echo "即将下载安装centos"
 sys_name=centos
 AH="arm64"
 BAGNAME="rootfs.tar.xz"
 
-curl -o default.html "https://mirrors.bfsu.edu.cn/lxc-images/images/centos/9-Stream/arm64/default"
-target=$(grep -m 1 -o '<td class="link"><a href=".*" title="' "default.html"| sed 's/<[^>]*>//g')
-date="${target:9:-10}"
-rm -rf default.html
-DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/centos/9-Stream/arm64/default/$date/rootfs.tar.xz"
-echo "======================================="
-echo "==============开始下载================="
-
-echo $DEF_CUR
-echo "======================================="
 
 cd ~
 # 检测是否安装过
@@ -31,9 +20,24 @@ else
     echo 正在安装依赖
 fi
 
+
+echo "即将下载安装centos"
 pkg install neofetch wget aria2 expect proot -y
 mkdir $sys_name-$AH
 
+wget -O default.html "https://mirrors.bfsu.edu.cn/lxc-images/images/centos/9-Stream/arm64/default"
+target=$(grep -m 1 -o '<td class="link"><a href=".*" title="' "default.html"| sed 's/<[^>]*>//g')
+date="${target:9:-10}"
+rm -rf default.html
+DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/centos/9-Stream/arm64/default/$date/rootfs.tar.xz"
+echo "======================================="
+echo "==============开始下载================="
+
+echo $DEF_CUR
+echo "======================================="
+sleep 1
+
+# 下载rootfs
 if [ -e ${BAGNAME} ]; then
     tar xf rootfs.tar.xz -C $sys_name-$AH
 else
@@ -44,6 +48,7 @@ echo -e "$sys_name-$AH 系统已下载，文件夹名为$sys_name-$AH"
 fi
 sleep 1
 
+# 配置容器
 neofetch >>systeminfo.log
 hostinfo=$(cat systeminfo.log |grep Host |awk -F':' '{print $2}')
 echo "更新DNS"
