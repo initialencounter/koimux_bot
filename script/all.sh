@@ -88,6 +88,7 @@ else
 fi
 
 # 启动qsign
+chmod 777 /run/screen
 screen -wipe
 cd /root/unidbg-fetch-qsign-1.1.9
 if screen -list | grep -q "qsignServer"; then
