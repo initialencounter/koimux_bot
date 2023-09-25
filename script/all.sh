@@ -64,7 +64,7 @@ else
 fi
 
 # 安装qsign
-if [ -f "/root/unidbg-fetch-qsign-1.1.9/txlib/8.9.63/config.json" ]; then
+if [ -f "/root/unidbg-fetch-qsign-1.1.9/txlib/8.9.68/config.json" ]; then
     echo qsign已安装
 else
     cd /root
@@ -97,7 +97,7 @@ else
     echo "正在启动 qsinServer"
 fi
 screen -dmS qsignServer
-screen -S qsignServer -p 0 -X stuff "cd /root/unidbg-fetch-qsign-1.1.9; bash bin/unidbg-fetch-qsign --basePath=txlib/8.9.63$(printf \\r)"
+screen -S qsignServer -p 0 -X stuff "cd /root/unidbg-fetch-qsign-1.1.9; bash bin/unidbg-fetch-qsign --basePath=txlib/8.9.68$(printf \\r)"
 echo "qsinServer,已启动，输入screen -r qsignSercer查看输出，ctrl+a+d挂起"
 
 # 启动koishi
