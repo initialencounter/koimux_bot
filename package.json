@@ -31,7 +31,7 @@
     "koishi": "4.14.6",
     "koishi-plugin-assets-local": "3.1.0",
     "koishi-plugin-davinci-003": "6.2.0",
-    "koishi-plugin-gocqhttp-dev": "^1.1.1-dev-0.4.2",
+    "koishi-plugin-gocqhttp-dev": "^1.1.1-dev-0.4.3",
     "koishi-plugin-loader": "1.0.0",
     "koishi-plugin-open-vits": "1.6.2",
     "koishi-plugin-puppeteer": "^3.5.0",
