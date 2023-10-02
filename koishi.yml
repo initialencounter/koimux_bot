@@ -21,6 +21,7 @@ plugins:
         endpoint: https://registry.koishi.chat/index.json
     sandbox: {}
     status: {}
+    ~auth:6kpbgd: {}
   group:database:
     database-sqlite: {}
   group:adapter:
