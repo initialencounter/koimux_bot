@@ -31,8 +31,6 @@ RUN cd /koimux_bot; npm i
 RUN chmod -R 777 /koimux_bot
 RUN mkdir /.npm
 RUN chmod -R 777 /.npm
-RUN mkdir /.local
-RUN chmod -R 777 /.local
 
 # 设置工作目录
 WORKDIR "/koimux_bot"
