@@ -1,4 +1,5 @@
 port: 5140
+host: 0.0.0.0
 maxPort: 5149
 plugins:
   group:basic:
