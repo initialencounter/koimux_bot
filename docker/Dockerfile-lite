@@ -1,18 +1,9 @@
-FROM debian:latest
+FROM node:lts-alpine
 
-RUN apt update
+RUN apk update
 
 # 安装 chromium 及要用到的工具
-RUN apt install git npm wget -y
-
-# 安装 nodejs 安装器
-RUN npm i -g n
-
-# 安装 nodejs stable
-RUN n stable
-
-# 刷新缓存
-RUN hash -r
+RUN apk add -f git wget
 
 # 克隆koishi-bp
 RUN git clone https://github.com/initialencounter/koimux_bot
