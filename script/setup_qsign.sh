@@ -19,7 +19,7 @@ if [ -f "/root/unidbg-fetch-qsign-1.1.9/txlib/8.9.68/config.json" ]; then
 else
     cd /root
     rm -rf unidbg-fetch-qsign*
-    curl -o unidbg-fetch-qsign.3.zip https://github.com/fuqiuluo/unidbg-fetch-qsign/releases/download/1.1.9/unidbg-fetch-qsign.3.zip
+    curl -o unidbg-fetch-qsign.3.zip https://ghproxy.com/https://github.com/fuqiuluo/unidbg-fetch-qsign/releases/download/1.1.9/unidbg-fetch-qsign.3.zip
     unzip unidbg-fetch-qsign.3.zip
     unzip unidbg-fetch-qsign-1.1.9.zip
     rm -f *.zip
