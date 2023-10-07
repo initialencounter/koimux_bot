@@ -13,12 +13,14 @@ else
 fi 
 
 
-if [ -f "/root/unidbg-fetch-qsign-1.1.9/txlib/8.9.63/config.json" ]; then
+# 安装qsign
+if [ -f "/root/unidbg-fetch-qsign-1.1.9/txlib/8.9.68/config.json" ]; then
     echo qsign已安装
 else
     cd /root
     rm -rf unidbg-fetch-qsign*
-    curl -o unidbg-fetch-qsign-1.2.1.zip https://github.com/fuqiuluo/unidbg-fetch-qsign/releases/download/1.2.1/unidbg-fetch-qsign-1.2.1.zip
-    unzip unidbg-fetch-qsign-1.2.1.zip
+    curl -o unidbg-fetch-qsign.3.zip https://github.com/fuqiuluo/unidbg-fetch-qsign/releases/download/1.1.9/unidbg-fetch-qsign.3.zip
+    unzip unidbg-fetch-qsign.3.zip
+    unzip unidbg-fetch-qsign-1.1.9.zip
     rm -f *.zip
 fi
