@@ -17,6 +17,7 @@ fi
 
 # 安装依赖
 echo "正在安装依赖"
+apt update
 apt install tar xz-utils screen git unzip curl -y
 
 # 安装nodejs
