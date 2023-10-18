@@ -6,11 +6,7 @@ else
     echo "您的会话正处于 proot 容器内"
 fi
 
-if command -v yum &> /dev/null; then
-    yum install unzip -y
-else
-    apt install unzip curl -y
-fi 
+apt install unzip curl -y
 
 
 # 安装qsign

@@ -20,11 +20,7 @@ echo "正在安装依赖"
 if command -v tar &> /dev/null; then
     echo "tar 已安装"
 else
-    if command -v yum &> /dev/null; then
-        yum install tar -y
-    else
-        apt install tar curl -y
-    fi
+    apt install tar curl -y
 fi
 
 if command -v java &> /dev/null; then

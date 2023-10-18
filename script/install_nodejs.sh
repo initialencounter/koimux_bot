@@ -19,21 +19,13 @@ fi
 if command -v xz &> /dev/null; then
     echo "xz 已安装"
 else
-    if command -v yum &> /dev/null; then
-        yum install xz -y
-    else
-        apt install xz-utils curl -y
-    fi
+    apt install xz-utils curl -y
 fi
 # tar
 if command -v tar &> /dev/null; then
     echo "tar 已安装"
 else
-    if command -v yum &> /dev/null; then
-        yum install tar -y
-    else
-        apt install tar -y
-    fi
+    apt install tar -y
 fi
 
 if command -v npm &> /dev/null; then

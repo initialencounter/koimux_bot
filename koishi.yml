@@ -3,11 +3,13 @@ host: 0.0.0.0
 maxPort: 5149
 plugins:
   group:basic:
+    $collapsed: true
     help: {}
     rate-limit: {}
     locales: {}
     commands: {}
   group:console:
+    $collapsed: true
     analytics: {}
     console:
       open: true
@@ -23,12 +25,12 @@ plugins:
     status: {}
     ~auth:6kpbgd: {}
   group:database:
+    $collapsed: true
     database-sqlite: {}
   group:adapter:
+    $collapsed: true
     ~adapter-onebot: {}
-    gocqhttp-dev:7gg7no: {}
-  ~davinci-003: {}
-  ~open-vits: {}
-  loader:4ovyml: {}
-  shutdown:1y2dzq: {}
-  spawn:7pollv: {}
+  group:utils:
+    loader:4ovyml: {}
+    spawn:7pollv: {}
+    shutdown:1y2dzq: {}

@@ -17,34 +17,7 @@ fi
 
 # 安装依赖
 echo "正在安装依赖"
-if command -v yum &> /dev/null; then
-        yum install epel-release tar xz git unzip -y
-        yum install screen newt -y
-
-    else
-        apt install tar xz-utils screen git unzip curl -y
-    fi
-
-# 安装java
-if command -v java &> /dev/null; then
-        echo "jdk 已安装"
-else
-    echo "正在安装 jdk-20"
-    cd /usr/local
-    rm jdk-20_linux-aarch64_bin.tar.gz -f
-    curl -O https://download.oracle.com/java/20/latest/jdk-20_linux-aarch64_bin.tar.gz
-    rm jdk-20.0.2 -rf
-    tar -zxvf jdk-20_linux-aarch64_bin.tar.gz
-    rm jdk-20_linux-aarch64_bin.tar.gz -f
-    echo "export PATH=\$PATH:/usr/local/jdk-20.0.2/bin" >> /etc/profile
-    echo "export JAVA_HOME=/usr/local/jdk-20.0.2" >> /etc/profile
-    source /etc/profile
-    if command -v java &> /dev/null; then
-        echo java 安装成功
-    else
-        echo java 安装失败
-    fi
-fi
+apt install tar xz-utils screen git unzip curl -y
 
 # 安装nodejs
 if command -v npm &> /dev/null; then
@@ -63,18 +36,6 @@ else
     npm config set registry https://registry.npmmirror.com
 fi
 
-# 安装qsign
-if [ -f "/root/unidbg-fetch-qsign-1.1.9/txlib/8.9.68/config.json" ]; then
-    echo qsign已安装
-else
-    cd /root
-    rm -rf unidbg-fetch-qsign*
-    curl -o unidbg-fetch-qsign.3.zip https://ghproxy.com/https://github.com/fuqiuluo/unidbg-fetch-qsign/releases/download/1.1.9/unidbg-fetch-qsign.3.zip
-    unzip unidbg-fetch-qsign.3.zip
-    unzip unidbg-fetch-qsign-1.1.9.zip
-    rm -f *.zip
-fi
-
 # 安装koishi
 if [ -f "/root/koimux_bot/node_modules/.bin/koishi" ]; then
     echo "koishi 已安装，在 /root/koimux_bot 目录"
@@ -86,20 +47,6 @@ else
     cd koimux_bot
     npm i
 fi
-
-# 启动qsign
-chmod 777 /run/screen
-screen -wipe
-cd /root/unidbg-fetch-qsign-1.1.9
-if screen -list | grep -q "qsignServer"; then
-    screen -S qsignServer -X quit
-else
-    # 启动 qsinServer
-    echo "正在启动 qsinServer"
-fi
-screen -dmS qsignServer
-screen -S qsignServer -p 0 -X stuff "cd /root/unidbg-fetch-qsign-1.1.9; bash bin/unidbg-fetch-qsign --basePath=txlib/8.9.68$(printf \\r)"
-echo "qsinServer,已启动，输入screen -r qsignSercer查看输出，ctrl+a+d挂起"
 
 # 启动koishi
 if command -v npm &> /dev/null; then

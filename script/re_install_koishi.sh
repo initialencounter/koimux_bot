@@ -16,29 +16,18 @@ fi
 
 echo "正在安装依赖"
 if command -v yum &> /dev/null; then
-    yum install git -y
-else
     apt install git curl -y
-fi 
 # xz
 if command -v xz &> /dev/null; then
     echo "xz 已安装"
 else
-    if command -v yum &> /dev/null; then
-        yum install xz -y
-    else
-        apt install xz-utils -y
-    fi
+    apt install xz-utils -y
 fi
 # tar
 if command -v tar &> /dev/null; then
     echo "tar 已安装"
 else
-    if command -v yum &> /dev/null; then
-        yum install tar -y
-    else
-        apt install tar -y
-    fi
+    apt install tar -y
 fi
 if command -v npm &> /dev/null; then
     echo "npm 已安装"

@@ -17,13 +17,7 @@ fi
 if command -v screen &> /dev/null; then
     echo "screen 已安装"
 else
-    if command -v yum &> /dev/null; then
-        yum install epel-release -y
-        yum install screen -y
-        chmod 777 /run/screen
-    else
-        apt install screen -y
-    fi 
+    apt install screen -y
 fi
 screen -wipe
 
