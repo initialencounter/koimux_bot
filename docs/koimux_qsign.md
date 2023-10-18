@@ -1,4 +1,4 @@
-# Koimux_bot-qsign
+# Koimux_bot
 
 ## 使用教程
 
@@ -7,10 +7,9 @@
 * Android Linux容器--[ZeroTermux](https://od.ixcmstudio.cn/repository/main/ZeroTermux/)
 
 ## 一条龙脚本
-包含安装 linux容器, nodejs、koishi、jdk、qsign,启动 koishi 和 qsign
-注意！！！ 该脚本运行环境是termux, 运行该脚本前请先运行命令`pkg upgrade`升级 termux
+包含安装 linux容器, nodejs、koishi,启动 koishi
+注意！！！ 该脚本运行环境是termux
 ```shell
-pkg upgrade;
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/install_debian.sh)"
 ```
 
@@ -22,10 +21,6 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/i
 ```bash
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/install_nodejs.sh)"
 ```
-### 安装java
-```bash
-bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/install_jdk.sh)"
-```
 ### 安装koishi
 
 ```bash
@@ -35,16 +30,6 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/i
 ### 重装koishi
 ```bash
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/re_install_koishi.sh)"
-```
-
-### 安装qsign
-```bash
-bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/setup_qsign.sh)"
-```
-
-### 启动qsign
-```bash
-bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/start_qsign.sh)"
 ```
 
 ### 启动koishi
