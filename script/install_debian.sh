@@ -102,7 +102,7 @@ deb-src https://mirrors.huaweicloud.com/debian/ bullseye main non-free contrib
 deb-src https://mirrors.huaweicloud.com/debian/ bullseye-updates main contrib 
 deb-src https://mirrors.huaweicloud.com/debian/ bullseye-backports main non-free contrib 
 deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ bullseye-security main non-free contrib 
-deb-src https://security.debian.org/debian-security bullseye-security main non-free contrib " > /etc/apt/sources.list
+deb-src https://security.debian.org/debian-security bullseye-security main non-free contrib " > $sys_name-$AH/etc/apt/sources.list
 
 
 sleep $SLEEP_TIME
