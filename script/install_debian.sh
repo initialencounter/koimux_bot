@@ -20,6 +20,11 @@ else
 fi
 
 mkdir $sys_name-$AH
+
+echo "正在切换apt镜像源"
+
+echo "deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main" > $PREFIX/etc/apt/sources.list
+
 apt update
 apt install neofetch wget aria2 proot -y
 
@@ -92,6 +97,8 @@ sleep $SLEEP_TIME
 
 echo "写入启动脚本"
 echo "为了兼容性考虑已将内核信息伪造成5.17.18-perf"
+
+echo "正在切换apt镜像源"
 
 echo "deb https://mirrors.huaweicloud.com/debian/ bullseye main non-free contrib 
 deb https://mirrors.huaweicloud.com/debian/ bullseye-updates main non-free contrib 
