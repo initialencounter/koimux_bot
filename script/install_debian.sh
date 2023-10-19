@@ -8,7 +8,7 @@ fi
 AH="arm64"
 sys_name="debian-sid"
 BAGNAME="rootfs.tar.xz"
-SLEEP_TIME=0.5
+SLEEP_TIME=0.1
 
 cd ~
 # 检测是否安装过
@@ -44,10 +44,10 @@ echo "======================================="
 
 # 下载rootfs
 if [ -e ${BAGNAME} ]; then
-    tar xf rootfs.tar.xz -C $sys_name-$AH
+    tar -xvf rootfs.tar.xz -C $sys_name-$AH
 else
 	wget ${DEF_CUR}
-	tar xf rootfs.tar.xz -C $sys_name-$AH
+	tar -xvf rootfs.tar.xz -C $sys_name-$AH
 rm -rf ${BAGNAME}
 echo -e "$sys_name-$AH 系统已下载，文件夹名为$sys_name-$AH"
 fi
@@ -81,7 +81,7 @@ sleep $SLEEP_TIME
 mkdir tmp
 echo 正在解压伪造文件
 
-tar xJf proot_proc/proc.tar.xz -C tmp 
+tar -xvJf proot_proc/proc.tar.xz -C tmp 
 cp -r tmp/usr/local/etc/tmoe-linux/proot_proc tmp/
 sleep $SLEEP_TIME
 echo 复制文件
