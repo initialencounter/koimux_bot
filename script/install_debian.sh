@@ -98,6 +98,11 @@ sleep $SLEEP_TIME
 echo "写入启动脚本"
 echo "为了兼容性考虑已将内核信息伪造成5.17.18-perf"
 
+echo "正在切换容器内的apt镜像源"
+
+echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian/ sid main contrib non-free non-free-firmware" > $sys_name-$AH/etc/apt/sources.list
+
+
 sleep $SLEEP_TIME
 cat > $sys_name-$AH.sh <<- EOM
 #!/bin/bash
