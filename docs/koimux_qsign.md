@@ -43,30 +43,14 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/s
 ### 安装ffmpeg
 
 发送语言则需要安装该软件
-```mdx-code-block
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="yum" label="CentOS" default>
-yum install ffmpeg -y
-  </TabItem>
-  <TabItem value="apt" label="Deb">
+```shell
+apt update
 apt install ffmpeg -y
-  </TabItem>
-</Tabs>
-
 ```
 ### 安装chromium
 
 部分插件要使用chromium渲染图片
-```mdx-code-block
-<Tabs>
-  <TabItem value="yum" label="CentOS" default>
-yum install chromium -y
-  </TabItem>
-  <TabItem value="apt" label="Deb">
+```shell
+apt update
 apt install chromium -y
-  </TabItem>
-</Tabs>
 ```
