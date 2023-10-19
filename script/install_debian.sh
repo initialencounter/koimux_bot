@@ -26,7 +26,7 @@ echo "正在切换apt镜像源"
 echo "deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main" > $PREFIX/etc/apt/sources.list
 
 apt update
-apt install neofetch wget aria2 proot -y
+apt install neofetch wget aria2 proot git -y
 
 
 echo "即将下载安装debian-sid"
@@ -98,10 +98,19 @@ sleep $SLEEP_TIME
 echo "写入启动脚本"
 echo "为了兼容性考虑已将内核信息伪造成5.17.18-perf"
 
-echo "正在切换容器内的apt镜像源"
+echo "正在安装 Node.js"
 
-echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian/ sid main contrib non-free non-free-firmware" > $sys_name-$AH/etc/apt/sources.list
+wget https://cdn.npmmirror.com/binaries/node/v20.5.0/node-v20.5.0-linux-arm64.tar.xz
+# 解压并删除 nodejs 源文件
+tar -xvf node-v20.5.0-linux-arm64.tar.xz -C $sys_name-$AH/usr/local/
+rm node-v20.5.0-linux-arm64.tar.xz -f
+echo "export PATH=\$PATH:/usr/local/node-v20.5.0-linux-arm64/bin" >> $sys_name-$AH/etc/profile
 
+echo "正在设置国内 npm 镜像源"
+echo "registry=https://registry.npmmirror.com" > $sys_name-$AH/root/.npmrc
+
+echo "正在克隆 koimux-bot"
+git clone https://gitee.com/initencunter/koimux_bot "$sys_name-$AH/root/"
 
 sleep $SLEEP_TIME
 cat > $sys_name-$AH.sh <<- EOM
@@ -114,8 +123,13 @@ echo "授予启动脚本执行权限"
 chmod +x $sys_name-$AH.sh
 echo -e "现在可以执行 ./$sys_name-$AH.sh 运行 $sys_name-$AH系统"
 
-curl -O https://gitee.com/initencunter/koimux_bot/raw/master/script/all.sh
-mv all.sh $sys_name-$AH/root/start.sh
+
+
+echo "#!/bin/bash
+cd /root/koimux_bot
+npm i -f
+npm start" > $sys_name-$AH/root/start.sh
+
 echo "bash start.sh" >> $sys_name-$AH/root/.bashrc
 echo "bash $sys_name-$AH.sh" > .bashrc
 bash ./$sys_name-$AH.sh
