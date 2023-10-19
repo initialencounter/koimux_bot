@@ -110,7 +110,7 @@ echo "正在设置国内 npm 镜像源"
 echo "registry=https://registry.npmmirror.com" > $sys_name-$AH/root/.npmrc
 
 echo "正在克隆 koimux-bot"
-git clone https://gitee.com/initencunter/koimux_bot "$sys_name-$AH/root/"
+git clone https://gitee.com/initencunter/koimux_bot "$sys_name-$AH/root/koimux_bot"
 
 sleep $SLEEP_TIME
 cat > $sys_name-$AH.sh <<- EOM
