@@ -1,1 +1,1 @@
-docs/koimux_qsign.md
+docs/koimux_bot.md
