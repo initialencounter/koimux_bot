@@ -27,9 +27,7 @@ plugins:
   group:database:
     $collapsed: true
     database-sqlite: {}
-  group:adapter:
-    $collapsed: true
-    ~adapter-onebot: {}
+  group:adapter: {}
   group:utils:
     loader:4ovyml: {}
     spawn:7pollv: {}
