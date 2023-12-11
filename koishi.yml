@@ -1,32 +1,33 @@
-port: 5140
-host: 0.0.0.0
-maxPort: 5149
 plugins:
+  server:0pwzwf:
+    port: 5140
+    host: 0.0.0.0
+    maxPort: 5149
   group:basic:
     $collapsed: true
-    help: {}
-    rate-limit: {}
-    locales: {}
-    commands: {}
+    help:gacoit: {}
+    rate-limit:55joa6: {}
+    locales:q7uyuo: {}
+    commands:35vf5o: {}
   group:console:
     $collapsed: true
-    analytics: {}
-    console:
+    analytics:t8z61l: {}
+    console:7ajg58:
       open: true
-    dataview: {}
-    logger: {}
-    config: {}
-    market:
+    dataview:eikxe5: {}
+    logger:6zs8ip: {}
+    config:8v8hpv: {}
+    market:64riq5:
       registry:
         endpoint: https://registry.npmmirror.com
       search:
         endpoint: https://registry.koishi.chat/index.json
-    sandbox: {}
-    status: {}
+    sandbox:g43x1h: {}
+    status:gyp7pc: {}
     ~auth:6kpbgd: {}
   group:database:
     $collapsed: true
-    database-sqlite: {}
+    database-sqlite:trixg6: {}
   group:adapter: {}
   group:utils:
     loader:4ovyml: {}
