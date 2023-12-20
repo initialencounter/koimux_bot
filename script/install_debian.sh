@@ -106,9 +106,6 @@ tar -xvf node-v18.18.0-linux-arm64.tar.xz -C $sys_name-$AH/usr/local/
 rm node-v18.18.0-linux-arm64.tar.xz -f
 echo "export PATH=\$PATH:/usr/local/node-v18.18.0-linux-arm64/bin" >> $sys_name-$AH/etc/profile
 
-echo "正在设置国内 npm 镜像源"
-echo "registry=https://registry.npmmirror.com" > $sys_name-$AH/root/.npmrc
-
 echo "正在克隆 koimux-bot"
 git clone https://gitee.com/initencunter/koimux_bot "$sys_name-$AH/root/koimux_bot"
 
@@ -127,6 +124,7 @@ echo -e "现在可以执行 ./$sys_name-$AH.sh 运行 $sys_name-$AH系统"
 
 echo "#!/bin/bash
 cd /root/koimux_bot
+npm run set-proxy
 npm i -f
 npm start" > $sys_name-$AH/root/start.sh
 
