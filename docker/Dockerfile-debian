@@ -25,15 +25,13 @@ RUN mkdir /.local
 RUN chmod -R 777 /.local
 
 # 安装依赖
-RUN cd /koimux_bot; npm i
+RUN cd /koimux_bot; yarn install
 
 # 修改权限防止抱错
 RUN chmod -R 777 /koimux_bot
-RUN mkdir /.npm
-RUN chmod -R 777 /.npm
 
 # 设置工作目录
 WORKDIR "/koimux_bot"
 
 # 设置启动命令
-CMD ["npm", "start"]
+CMD ["yarn", "start"]

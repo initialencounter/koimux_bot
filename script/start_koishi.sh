@@ -11,7 +11,7 @@ if command -v node &> /dev/null; then
     if [ -f "/root/koimux_bot/package.json" ]; then
         echo "正在启动 koishi"
         cd /root/koimux_bot
-        npm start
+        yarn start
     else
         echo "koishi 未安装"
         echo "请运行 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/re_install_koishi.sh)" 来重装 koishi"

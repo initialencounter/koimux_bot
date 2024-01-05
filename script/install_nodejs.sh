@@ -40,6 +40,4 @@ else
     rm node-v20.10.0-linux-arm64.tar.xz -f
     echo "export PATH=\$PATH:/usr/local/node-v20.10.0-linux-arm64/bin" >> /etc/profile
     source /etc/profile
-    # 设置国内 npm 镜像源
-    npm config set registry https://registry.npmmirror.com
 fi
