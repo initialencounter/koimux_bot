@@ -8,9 +8,7 @@
   ],
   "license": "AGPL-3.0",
   "scripts": {
-    "start": "koishi start",
-    "set-proxy": "npm config set registry https://registry.npmmirror.com",
-    "unset-proxy": "npm config delete registry"
+    "start": "koishi start"
   },
   "dependencies": {
     "@koishijs/plugin-analytics": "2.0.6",
@@ -36,5 +34,9 @@
     "koishi-plugin-rate-limit": "2.0.1",
     "koishi-plugin-shutdown": "0.3.1",
     "koishi-plugin-spawn": "1.1.0"
-  }
+  },
+  "engines": {
+    "node": ">=18.12.0"
+  },
+  "packageManager": "yarn@4.0.2"
 }

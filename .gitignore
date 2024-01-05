@@ -1,11 +1,20 @@
 lib
 dist
-accounts
+/cache
+/data
+/temp
 external
-logs
-data
 
-yarn.lock
+.env.local
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 package-lock.json
 pnpm-lock.yaml
 node_modules
@@ -16,11 +25,7 @@ tsconfig.tsbuildinfo
 
 .eslintcache
 .DS_Store
-.idea
-.vscode
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.db
-*.bak

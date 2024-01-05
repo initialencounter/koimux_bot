@@ -124,9 +124,8 @@ echo -e "现在可以执行 ./$sys_name-$AH.sh 运行 $sys_name-$AH系统"
 
 echo "#!/bin/bash
 cd /root/koimux_bot
-npm run set-proxy
-npm i -f
-npm start" > $sys_name-$AH/root/start.sh
+yarn install
+yarn start" > $sys_name-$AH/root/start.sh
 
 echo "bash start.sh" >> $sys_name-$AH/root/.bashrc
 echo "bash $sys_name-$AH.sh" > .bashrc
