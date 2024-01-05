@@ -106,8 +106,8 @@ tar -xvf node-v20.10.0-linux-arm64.tar.xz -C $sys_name-$AH/usr/local/
 rm node-v20.10.0-linux-arm64.tar.xz -f
 echo "export PATH=\$PATH:/usr/local/node-v20.10.0-linux-arm64/bin" >> $sys_name-$AH/etc/profile
 
-echo "正在克隆 koimux-bot"
-git clone https://gitee.com/initencunter/koimux_bot "$sys_name-$AH/root/koimux_bot"
+echo "正在克隆 boilerplate"
+git clone https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate "$sys_name-$AH/root/boilerplate"
 
 sleep $SLEEP_TIME
 cat > $sys_name-$AH.sh <<- EOM
@@ -123,7 +123,9 @@ echo -e "现在可以执行 ./$sys_name-$AH.sh 运行 $sys_name-$AH系统"
 
 
 echo "#!/bin/bash
-cd /root/koimux_bot
+cd /root/boilerplate
+export COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
+corepack enable
 yarn install
 yarn start" > $sys_name-$AH/root/start.sh
 

@@ -6,23 +6,23 @@ RUN apk update
 RUN apk add -f chromium ffmpeg git wget
 
 # 克隆koishi-bp
-RUN git clone https://github.com/initialencounter/koimux_bot
+RUN git clone https://github.com/koishijs/boilerplate
 
 # 修改端口
-RUN sed -i 's/port: 5140/port: 7860/g' /koimux_bot/koishi.yml
+RUN sed -i 's/port: 5140/port: 7860/g' /boilerplate/koishi.yml
 
 # 避免 go-cqhttp 安装失败
 RUN mkdir /.local
 RUN chmod -R 777 /.local
 
 # 安装依赖
-RUN cd /koimux_bot; yarn install
+RUN cd /boilerplate; corepack enable; yarn install
 
 # 修改权限防止抱错
-RUN chmod -R 777 /koimux_bot
+RUN chmod -R 777 /boilerplate
 
 # 设置工作目录
-WORKDIR "/koimux_bot"
+WORKDIR "/boilerplate"
 
 # 设置启动命令
 CMD ["yarn", "start"]

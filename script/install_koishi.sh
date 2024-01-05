@@ -49,13 +49,15 @@ else
     source /etc/profile
 fi
 
-if [ -f "/root/koimux_bot/package.json" ]; then
-    echo "koishi 已安装，在 /root/koimux_bot 目录"
+if [ -f "/root/boilerplate/package.json" ]; then
+    echo "koishi 已安装，在 /root/boilerplate 目录"
 else
     echo "正在安装 koishi"
     cd /root
-    rm koimux_bot -rf
-    git clone https://gitee.com/initencunter/koimux_bot
-    cd koimux_bot
+    rm boilerplate -rf
+    git clone https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate
+    cd boilerplate
+    export COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
+    corepack enable
     yarn install
 fi
