@@ -72,7 +72,7 @@ rm systeminfo.log
 echo "export  TZ='Asia/Shanghai'" >> $sys_name-$AH/root/.bashrc
 echo "export  TZ='Asia/Shanghai'" >> $sys_name-$AH/etc/profile
 echo "export PULSE_SERVER=tcp:127.0.0.1:4173" >> $sys_name-$AH/etc/profile
-echo "export PULSE_SERVER=tcp:127.0.0.1:4173" >> $sys_name-$AH/root/bashrc
+echo "export PULSE_SERVER=tcp:127.0.0.1:4173" >> $sys_name-$AH/root/.bashrc
 echo 检测到你没有权限读取/proc内的所有文件
 echo 将自动伪造新文件
 mkdir proot_proc
