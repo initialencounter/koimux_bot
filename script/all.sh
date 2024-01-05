@@ -35,6 +35,15 @@ else
     source /etc/profile
 fi
 
+# 安装yarn
+if command -v yarn &> /dev/null; then
+    echo "Yarn 已安装"
+else
+    echo "正在安装 Yarn"
+    export COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
+    corepack enable
+fi
+
 # 安装koishi
 if [ -f "/root/boilerplate/node_modules/.bin/koishi" ]; then
     echo "koishi 已安装，在 /root/boilerplate 目录"
@@ -44,8 +53,6 @@ else
     rm boilerplate -rf
     git clone https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate
     cd boilerplate
-    export COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
-    corepack enable
     yarn install
 fi
 
