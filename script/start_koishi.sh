@@ -7,7 +7,7 @@ else
     echo "您的会话正处于 proot 容器内"
 fi
 
-if command -v npm &> /dev/null; then
+if command -v node &> /dev/null; then
     if [ -f "/root/koimux_bot/package.json" ]; then
         echo "正在启动 koishi"
         cd /root/koimux_bot
@@ -17,6 +17,6 @@ if command -v npm &> /dev/null; then
         echo "请运行 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/re_install_koishi.sh)" 来重装 koishi"
     fi
 else
-    echo "npm 未安装"
-    echo "请运行 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/install_nodejs.sh)" 来安装npm"
+    echo "Node.js 未安装"
+    echo "请运行 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/install_nodejs.sh)" 来安装 Node.js"
 fi
