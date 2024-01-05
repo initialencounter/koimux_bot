@@ -55,7 +55,9 @@ echo 1秒后开始重装koishi,数据将丢失！！ctrl+c结束运行
 
 echo "正在重装 koishi"
 cd /root
-rm koimux_bot -rf
-git clone https://gitee.com/initencunter/koimux_bot
-cd koimux_bot
+rm boilerplate -rf
+git clone https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate
+cd boilerplate
+export COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
+corepack enable
 yarn install

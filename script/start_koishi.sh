@@ -8,9 +8,9 @@ else
 fi
 
 if command -v node &> /dev/null; then
-    if [ -f "/root/koimux_bot/package.json" ]; then
+    if [ -f "/root/boilerplate/package.json" ]; then
         echo "正在启动 koishi"
-        cd /root/koimux_bot
+        cd /root/boilerplate
         yarn start
     else
         echo "koishi 未安装"
