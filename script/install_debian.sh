@@ -105,7 +105,6 @@ wget https://npmmirror.com/mirrors/node/v20.10.0/node-v20.10.0-linux-arm64.tar.x
 tar -xvf node-v20.10.0-linux-arm64.tar.xz -C $sys_name-$AH/usr/local/
 rm node-v20.10.0-linux-arm64.tar.xz -f
 echo "export PATH=\$PATH:/usr/local/node-v20.10.0-linux-arm64/bin" >> $sys_name-$AH/etc/profile
-source $sys_name-$AH/etc/profile
 
 echo "正在克隆 boilerplate"
 git clone https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate "$sys_name-$AH/root/boilerplate"
@@ -117,22 +116,17 @@ unset LD_PRELOAD
 proot --bind=/vendor --bind=/system --bind=/data/data/com.termux/files/usr --bind=/storage --bind=/storage/self/primary:/sdcard --bind=/data/data/com.termux/files/home --bind=/data/data/com.termux/cache --bind=/data/dalvik-cache --bind=$sys_name-$AH/tmp:/dev/shm --bind=$sys_name-$AH/etc/proc/vmstat:/proc/vmstat --bind=$sys_name-$AH/etc/proc/version:/proc/version --bind=$sys_name-$AH/etc/proc/uptime:/proc/uptime --bind=$sys_name-$AH/etc/proc/stat:/proc/stat --bind=$sys_name-$AH/etc/proc/loadavg:/proc/loadavg  --bind=$sys_name-$AH/etc/proc/bus/pci/00:/proc/bus/pci/00 --bind=$sys_name-$AH/etc/proc/devices:/proc/bus/devices --bind=$sys_name-$AH/etc/proc/bus/input/devices:/proc/bus/input/devices --bind=$sys_name-$AH/etc/proc/modules:/proc/modules   --bind=/sys --bind=/proc/self/fd/2:/dev/stderr --bind=/proc/self/fd/1:/dev/stdout --bind=/proc/self/fd/0:/dev/stdin --bind=/proc/self/fd:/dev/fd --bind=/proc --bind=/dev/urandom:/dev/random --bind=/data/data/com.termux/files/usr/tmp:/tmp --bind=/data/data/com.termux/files:$sys_name-$AH/termux --bind=/dev --root-id --cwd=/root -L --kernel-release=5.17.18-perf --sysvipc --link2symlink --kill-on-exit --rootfs=$sys_name-$AH/ /usr/bin/env -i HOME=/root LANG=zh_CN.UTF-8 TERM=xterm-256color /bin/su -l root
 EOM
 
-# 安装yarn
-if command -v yarn &> /dev/null; then
-    echo "Yarn 已安装"
-else
-    echo "正在安装 Yarn"
-    export COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
-    corepack enable
-fi
-
 echo "授予启动脚本执行权限"
 chmod +x $sys_name-$AH.sh
 echo -e "现在可以执行 ./$sys_name-$AH.sh 运行 $sys_name-$AH系统"
 
 
-
 echo "#!/bin/bash
+if ! command -v yarn &> /dev/null; then
+    echo "正在安装 Yarn"
+    export COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
+    corepack enable
+fi
 cd /root/boilerplate
 yarn install
 yarn start" > $sys_name-$AH/root/start.sh
