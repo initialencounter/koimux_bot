@@ -105,6 +105,7 @@ wget https://npmmirror.com/mirrors/node/v20.10.0/node-v20.10.0-linux-arm64.tar.x
 tar -xvf node-v20.10.0-linux-arm64.tar.xz -C $sys_name-$AH/usr/local/
 rm node-v20.10.0-linux-arm64.tar.xz -f
 echo "export PATH=\$PATH:/usr/local/node-v20.10.0-linux-arm64/bin" >> $sys_name-$AH/etc/profile
+source $sys_name-$AH/etc/profile
 
 echo "正在克隆 boilerplate"
 git clone https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate "$sys_name-$AH/root/boilerplate"
