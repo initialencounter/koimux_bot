@@ -105,19 +105,10 @@ wget https://npmmirror.com/mirrors/node/v20.10.0/node-v20.10.0-linux-arm64.tar.x
 tar -xvf node-v20.10.0-linux-arm64.tar.xz -C $sys_name-$AH/usr/local/
 rm node-v20.10.0-linux-arm64.tar.xz -f
 echo "export PATH=\$PATH:/usr/local/node-v20.10.0-linux-arm64/bin" >> $sys_name-$AH/etc/profile
-echo "export PATH=\$PATH://data/data/com.termux/files/home/$sys_name-$AH/usr/local/node-v20.10.0-linux-arm64/bin" >> ~/.bashrc
-source ~/.bashrc
 
 echo "正在克隆 boilerplate"
 git clone https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate "$sys_name-$AH/root/boilerplate"
-cd /root/boilerplate
-if ! command -v yarn &> /dev/null; then
-    echo "正在安装 Yarn"
-    export COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
-    corepack enable
-fi
 
-yarn install
 sleep $SLEEP_TIME
 cat > $sys_name-$AH.sh <<- EOM
 #!/bin/bash
@@ -131,7 +122,13 @@ echo -e "现在可以执行 ./$sys_name-$AH.sh 运行 $sys_name-$AH系统"
 
 
 echo "#!/bin/bash
+if ! command -v yarn &> /dev/null; then
+    echo "正在安装 Yarn"
+    export COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
+    corepack enable
+fi
 cd /root/boilerplate
+yarn install
 yarn start" > $sys_name-$AH/root/start.sh
 
 echo "bash start.sh" >> $sys_name-$AH/root/.bashrc
