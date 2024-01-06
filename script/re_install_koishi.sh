@@ -42,6 +42,13 @@ else
     echo "export PATH=\$PATH:/usr/local/node-v20.10.0-linux-arm64/bin" >> /etc/profile
     source /etc/profile
 fi
+if command -v yarn &> /dev/null; then
+    echo "Yarn 已安装"
+else
+    echo "正在安装 Yarn"
+    export COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
+    corepack enable
+fi
 
 echo 5秒后开始重装koishi,数据将丢失！！ctrl+c结束运行
 sleep 1
@@ -58,6 +65,4 @@ cd /root
 rm boilerplate -rf
 git clone https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate
 cd boilerplate
-export COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
-corepack enable
 yarn install
