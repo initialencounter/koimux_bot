@@ -110,17 +110,14 @@ source ~/.bashrc
 
 echo "正在克隆 boilerplate"
 git clone https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate "$sys_name-$AH/root/boilerplate"
-
+cd /root/boilerplate
 if ! command -v yarn &> /dev/null; then
     echo "正在安装 Yarn"
     export COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
     corepack enable
 fi
 
-cd $sys_name-$AH/root/boilerplate
 yarn install
-cd ~
-
 sleep $SLEEP_TIME
 cat > $sys_name-$AH.sh <<- EOM
 #!/bin/bash
