@@ -128,7 +128,9 @@ if ! command -v yarn &> /dev/null; then
     corepack enable
 fi
 cd /root/boilerplate
-yarn install
+if [ ! -f "./yarn.lock" ]; then
+    yarn install
+fi
 yarn start" > $sys_name-$AH/root/start.sh
 
 echo "bash start.sh" >> $sys_name-$AH/root/.bashrc
