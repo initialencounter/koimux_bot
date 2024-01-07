@@ -111,7 +111,7 @@ echo "export PATH=\$PATH:/usr/local/node-v20.10.0-linux-arm64/bin" >> $sys_name-
 
 echo "正在克隆 boilerplate"
 git clone https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate "$sys_name-$AH/root/boilerplate"
-chmod +x $sys_name-$AH/usr/local/node-v20.10.0-linux-arm64/bin/yarn
+chmod +x $sys_name-$AH/usr/local/bin/yarn
  
 
 sleep $SLEEP_TIME
