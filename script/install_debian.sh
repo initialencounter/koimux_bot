@@ -124,8 +124,8 @@ echo -e "现在可以执行 ./$sys_name-$AH.sh 运行 $sys_name-$AH系统"
 echo "#!/bin/bash
 if ! command -v yarn &> /dev/null; then
     echo "正在安装 Yarn"
-    export COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
-    corepack enable
+    npm config set registry https://registry.npmmirror.com
+    npm i -g yarn
 fi
 cd /root/boilerplate
 if [ ! -f "./node_modules/koishi/package.json" ]; then
