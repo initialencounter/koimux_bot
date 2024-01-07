@@ -128,8 +128,8 @@ if ! command -v yarn &> /dev/null; then
     corepack enable
 fi
 cd /root/boilerplate
-if [ ! -f "./yarn.lock" ]; then
-    yarn install
+if [ ! -f "./node_modules/koishi/package.json" ]; then
+    yarn workspaces focus --production
 fi
 yarn start" > $sys_name-$AH/root/start.sh
 
