@@ -11,6 +11,8 @@
 注意！！！ 该脚本运行环境是termux
 ```shell
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/install_debian.sh)"
+# 备用脚本
+bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/tmp_patch.sh)"
 ```
 
 # 下文所有命令只适用于在 proot 容器中运行
