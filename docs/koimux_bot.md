@@ -44,7 +44,7 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/s
 
 ### 安装 ffmpeg
 
-发送语言则需要安装该软件
+发送语音可能需要安装该软件
 ```bash
 apt update
 apt install ffmpeg -y
