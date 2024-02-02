@@ -9,8 +9,9 @@
 ## 一条龙脚本
 包含安装 linux容器, nodejs、koishi,启动 koishi
 注意！！！ 该脚本运行环境是termux
-```shell
+```bash
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/install_debian.sh)"
+
 # 备用脚本
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/tmp_patch.sh)"
 ```
@@ -45,14 +46,14 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/s
 ### 安装ffmpeg
 
 发送语言则需要安装该软件
-```shell
+```bash
 apt update
 apt install ffmpeg -y
 ```
 ### 安装chromium
 
 部分插件要使用chromium渲染图片
-```shell
+```bash
 apt update
 apt install chromium -y
 ```
