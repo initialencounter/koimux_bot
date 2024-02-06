@@ -5,10 +5,16 @@ else
     exit 1
 fi
 
-AH="arm64"
-sys_name="debian-sid"
+AH=$(uname -m)
+sys_name="bookworm"
 BAGNAME="rootfs.tar.xz"
 SLEEP_TIME=0.1
+
+if [ "$AH" = "aarch64" ]; then
+    AH="arm64"
+elif [ "$AH" = "x86_64" ]; then
+    AH="amd64"
+fi
 
 cd ~
 # 检测是否安装过
@@ -29,12 +35,12 @@ apt update
 apt install neofetch wget aria2 proot git -y
 
 
-echo "即将下载安装debian-sid"
-wget -O default.html "https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default"
+echo "即将下载安装$sys_name"
+wget -O default.html "https://mirrors.bfsu.edu.cn/lxc-images/images/debian/$sys_name/$AH/default"
 target=$(grep -m 1 -o '<td class="link"><a href=".*" title="' "default.html"| sed 's/<[^>]*>//g')
 date="${target:9:-10}"
 rm -rf default.html
-DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default/$date/rootfs.tar.xz"
+DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/debian/$sys_name/$AH/default/$date/rootfs.tar.xz"
 echo "======================================="
 echo "==============开始下载================="
 
@@ -100,19 +106,16 @@ echo "为了兼容性考虑已将内核信息伪造成5.17.18-perf"
 
 echo "正在安装 Node.js"
 
-wget https://npmmirror.com/mirrors/node/v20.10.0/node-v20.10.0-linux-arm64.tar.xz
+wget https://npmmirror.com/mirrors/node/v20.10.0/node-v20.10.0-linux-$AH.tar.xz
 # 解压并删除 nodejs 源文件
-tar -xvf node-v20.10.0-linux-arm64.tar.xz -C $sys_name-$AH/usr/local/
-rm node-v20.10.0-linux-arm64.tar.xz -f
-
+tar -xvf node-v20.10.0-linux-$AH.tar.xz -C $sys_name-$AH/usr/local/
+rm node-v20.10.0-linux-$AH.tar.xz -f
 echo '#!/usr/bin/env node' >> $sys_name-$AH/usr/local/bin/yarn
 echo 'require("/root/boilerplate/.yarn/releases/yarn-4.0.1.cjs");' >> $sys_name-$AH/usr/local/bin/yarn
-echo "export PATH=\$PATH:/usr/local/node-v20.10.0-linux-arm64/bin" >> $sys_name-$AH/etc/profile
+echo "export PATH=\$PATH:/usr/local/node-v20.10.0-linux-$AH/bin" >> $sys_name-$AH/etc/profile
 
 echo "正在克隆 boilerplate"
 git clone https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate "$sys_name-$AH/root/boilerplate"
-chmod +x $sys_name-$AH/usr/local/bin/yarn
- 
 
 sleep $SLEEP_TIME
 cat > $sys_name-$AH.sh <<- EOM
