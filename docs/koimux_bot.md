@@ -47,12 +47,12 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/s
 发送语音可能需要安装该软件
 ```bash
 apt update
-apt install ffmpeg -y
+apt install ffmpeg --fix-missing -y
 ```
 ### 安装 chromium
 
 部分插件要使用 chromium 渲染图片
 ```bash
 apt update
-apt install chromium -y
+apt install chromium --fix-missing -y
 ```
