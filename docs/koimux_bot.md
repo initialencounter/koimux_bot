@@ -8,20 +8,20 @@
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/koishi.sh)"
 ```
 
-### 重装 koishi
-```bash
-bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/re_install_koishi.sh)"
-```
-
 ### 启动 koishi
 ```bash
 koi start
 ```
+
 ### 停止 koishi
 ```bash
 koi stop
 ```
 
+### 重装 koishi
+```bash
+koi reset
+```
 
 ## 附录
 
