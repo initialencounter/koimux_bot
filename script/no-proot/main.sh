@@ -23,5 +23,6 @@ echo '#!/bin/bash' > $PREFIX/bin/koishi
 echo 'echo "正在启动 Koishi"' >> $PREFIX/bin/koishi
 echo 'cd ~/koishi && yarn start &' >> $PREFIX/bin/koishi
 chmod +x $PREFIX/bin/koishi
-echo "Koishi 已安装，在 ~/koishi 目录"
-echo "现在你可以输入命令 \e[32mkoishi\e[0m 来启动 Koishi"
+echo "koishi 已安装，在 ~/koishi 目录"
+echo "现在你可以使用命令 koishi"
+echo "来启动 koishi"
