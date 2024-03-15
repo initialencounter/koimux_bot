@@ -19,7 +19,14 @@ fi
 echo '#!/bin/bash' > $PREFIX/bin/koishi
 echo 'echo "正在启动 Koishi"' >> $PREFIX/bin/koishi
 echo 'cd ~/koishi && yarn start &' >> $PREFIX/bin/koishi
+echo 'sleep 10 && echo "Koishi 已启动"' >> $PREFIX/bin/koishi
+echo '输入 stop-koishi 停止 koishi' >> $PREFIX/bin/koishi
 chmod +x $PREFIX/bin/koishi
+echo '#!/bin/bash' > $PREFIX/bin/stop-koishi
+echo 'ps -ef|grep koishi|grep -v grep|cut -c 9-15|xargs kill -9' >> $PREFIX/bin/stop-koishi
+echo 'echo "koishi 已停止, 输入 koishi 再次启动"' >> $PREFIX/bin/stop-koishi
+chmod +x $PREFIX/bin/stop-koishi
 echo "koishi 已安装，在 ~/koishi 目录"
 echo "现在你可以使用命令 koishi"
 echo "来启动 koishi"
+echo "stop-koishi 停止 koishi"
