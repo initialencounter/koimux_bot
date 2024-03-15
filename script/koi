@@ -10,6 +10,21 @@ case "$1" in
         ps -ef|grep koishi|grep -v grep|cut -c 9-15|xargs kill -9
         echo "koishi 已停止, 输入 koi start 再次启动"
         ;;
+    "reset")
+        echo 5秒后开始重装koishi,数据将丢失！！ctrl+c结束运行
+        sleep 1
+        echo 4秒后开始重装koishi,数据将丢失！！ctrl+c结束运行
+        sleep 1
+        echo 3秒后开始重装koishi,数据将丢失！！ctrl+c结束运行
+        sleep 1
+        echo 2秒后开始重装koishi,数据将丢失！！ctrl+c结束运行
+        sleep 1
+        echo 1秒后开始重装koishi,数据将丢失！！ctrl+c结束运行
+
+        echo "正在重装 koishi"
+        rm ~/koishi -rf
+        bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/koishi.sh)"
+        ;;
     "*")
         echo "启动koishi: koi start\n停止koishi: koi stop"
         ;;
