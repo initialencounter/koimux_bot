@@ -1,5 +1,7 @@
 # Koimux_bot
 
+在手机上部署 Koishi
+
 ## 工具
 
 * 基于 Termux 二次开发的 Android 终端应用程序和 Linux 环境。[ZeroTermux](https://od.ixcmstudio.cn/repository/main/ZeroTermux/)
@@ -36,4 +38,10 @@ pkg i ffmpeg -y
 pkg i x11-repo -y
 pkg rei tur-repo -y
 pkg i chromium -y
+```
+
+### 我全都要
+
+```bash
+bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/full.sh)"
 ```
