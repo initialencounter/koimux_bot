@@ -2,10 +2,6 @@
 
 在手机上部署 Koishi
 
-## 工具
-
-* 基于 Termux 二次开发的 Android 终端应用程序和 Linux 环境。[ZeroTermux](https://od.ixcmstudio.cn/repository/main/ZeroTermux/)
-
 ### 安装 koishi
 
 ```bash
@@ -45,3 +41,9 @@ pkg i chromium -y
 ```bash
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/full.sh)"
 ```
+
+## 参考与基础
+
+[koishi](https://github.com/koishijs/koishi)
+
+[ZeroTermux](https://od.ixcmstudio.cn/repository/main/ZeroTermux/)
