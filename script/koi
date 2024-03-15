@@ -1,0 +1,18 @@
+#!/bin/bash
+
+case "$1" in
+    "start")
+        echo "正在启动 Koishi"
+        cd ~/koishi && yarn start &
+        sleep 10 && echo "Koishi 已启动"
+        echo '输入 stop-koishi 停止 koishi'
+        ;;
+    "stop")
+        ps -ef|grep koishi|grep -v grep|cut -c 9-15|xargs kill -9
+        echo "koishi 已停止, 输入 koishi 再次启动"
+        ;;
+    "*")
+        echo "启动koishi: koi start\n停止koishi: koi stop"
+        ;;
+esac
+

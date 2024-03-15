@@ -24,10 +24,9 @@ if [ ! -f "~/koishi/koishi.yml" ]; then
     sed -i "s/win32':/android':/g" ~/koishi/node_modules/puppeteer-finder/lib/index.js
 fi
 
-echo '#!/bin/bash' > $PREFIX/bin/koishi
-echo 'echo "正在启动 Koishi"' >> $PREFIX/bin/koishi
-echo 'cd ~/koishi && yarn start &' >> $PREFIX/bin/koishi
-chmod +x $PREFIX/bin/koishi
+curl -L -o $PREFIX/bin/koi https://gitee.com/initencunter/koimux_bot/raw/master/script/koi
+chmod +x $PREFIX/bin/koi
 echo "koishi 已安装，在 ~/koishi 目录"
-echo "现在你可以使用命令 koishi"
+echo "现在你可以使用命令 koi start"
 echo "来启动 koishi"
+echo "koi stop 停止 koishi"
