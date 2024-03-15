@@ -19,7 +19,7 @@ if [ ! -f "~/koishi/koishi.yml" ]; then
     unzip ~/boilerplate.zip -d ~/koishi
     rm ~/boilerplate.zip
     # 运行允许局域网访问
-    sed -i 's/port: 5140/port: 7860/g' ~/koishi/koishi.yml
+    sed -Ei 's/(([[:space:]]*)maxPort.*)/\1\n\2host: 0.0.0.0/' ~/koishi/koishi.yml
     # 修复 puppeteer 平台不兼容
     sed -i "s/win32':/android':/g" ~/koishi/node_modules/puppeteer-finder/lib/index.js
 fi
