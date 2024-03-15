@@ -21,7 +21,7 @@ if [ ! -f "~/koishi/koishi.yml" ]; then
     # 运行允许局域网访问
     sed -Ei 's/(([[:space:]]*)maxPort.*)/\1\n\2host: 0.0.0.0/' ~/koishi/koishi.yml
     # 修复 puppeteer 平台不兼容
-    sed -i "s/win32':/android':/g" ~/koishi/node_modules/puppeteer-finder/lib/index.js
+    sed -i "s/'linux'':/android':/g" ~/koishi/node_modules/puppeteer-finder/lib/index.js
 fi
 
 curl -L -o $PREFIX/bin/koi https://gitee.com/initencunter/koimux_bot/raw/master/script/koi
