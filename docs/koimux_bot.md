@@ -15,7 +15,11 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/r
 
 ### 启动 koishi
 ```bash
-koishi
+koi start
+```
+### 停止 koishi
+```bash
+koi stop
 ```
 
 
