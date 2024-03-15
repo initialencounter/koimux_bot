@@ -2,31 +2,12 @@
 
 ## 工具
 
-* Android Linux 容器--[ZeroTermux](https://od.ixcmstudio.cn/repository/main/ZeroTermux/)
+* 基于 Termux 二次开发的 Android 终端应用程序和 Linux 环境。[ZeroTermux](https://od.ixcmstudio.cn/repository/main/ZeroTermux/)
 
-## 一条龙脚本
-包含安装 debian、nodejs、koishi，启动 koishi
-
-注意！！！ 该脚本运行环境是 termux
-```bash
-bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/install_debian.sh)"
-
-# 备用脚本
-bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/tmp_patch.sh)"
-```
-
-## 下文所有命令只适用于在 proot 容器中运行
-
-[如何安装并进入 proot 容器](./install_debian.md)
-
-### 安装 nodejs 
-```bash
-bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/install_nodejs.sh)"
-```
 ### 安装 koishi
 
 ```bash
-bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/install_koishi.sh)"
+bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/koishi.sh)"
 ```
 
 ### 重装 koishi
@@ -36,7 +17,7 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/r
 
 ### 启动 koishi
 ```bash
-bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/start_koishi.sh)"
+koishi
 ```
 
 
@@ -46,13 +27,13 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/s
 
 发送语音可能需要安装该软件
 ```bash
-apt update
-apt install ffmpeg --fix-missing -y
+pkg i ffmpeg -y
 ```
 ### 安装 chromium
 
 部分插件要使用 chromium 渲染图片
 ```bash
-apt update
-apt install chromium --fix-missing -y
+pkg i x11-repo -y
+pkg rei tur-repo -y
+pkg i chromium -y
 ```
