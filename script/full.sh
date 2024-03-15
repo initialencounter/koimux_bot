@@ -18,6 +18,10 @@ if [ ! -f "~/koishi/koishi.yml" ]; then
     curl -L -o ~/boilerplate.zip https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate/releases/download/${version}/boilerplate-${version}-linux-arm64-node20.zip
     unzip ~/boilerplate.zip -d ~/koishi
     rm ~/boilerplate.zip
+    # 运行允许局域网访问
+    sed -i 's/port: 5140/port: 7860/g' ~/koishi/koishi.yml
+    # 修复 puppeteer 平台不兼容
+    sed -i "s/win32':/android':/g" ~/koishi/node_modules/puppeteer-finder/lib/index.js
 fi
 
 echo '#!/bin/bash' > $PREFIX/bin/koishi
