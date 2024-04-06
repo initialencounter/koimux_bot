@@ -5,7 +5,7 @@
 ### 安装 koishi
 
 ```bash
-bash -c "$(curl -L https://my.initencunter.com/koishi.sh)"
+bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/koishi.sh)"
 ```
 
 ### 启动 koishi
