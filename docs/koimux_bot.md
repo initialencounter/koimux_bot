@@ -43,7 +43,7 @@ pkg i chromium -y
 ### 我全都要
 
 ```bash
-bash -c "$(curl -L https://my.initencunter.com/full.sh)"
+bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/full.sh)"
 ```
 
 ## 参考与基础
