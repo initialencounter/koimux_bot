@@ -25,7 +25,7 @@ if [ ! -f "~/koishi/koishi.yml" ]; then
     sed -i "s/'linux':/'android':/g" ~/koishi/node_modules/puppeteer-finder/lib/index.js
 fi
 
-curl -L -o $PREFIX/bin/koi https://my.initencunter.com/koi
+curl -L -o $PREFIX/bin/koi https://gitee.com/initencunter/koimux_bot/raw/master/script/koi
 chmod +x $PREFIX/bin/koi
 echo "koishi 已安装，在 ~/koishi 目录"
 echo "现在你可以使用命令 koi start"
