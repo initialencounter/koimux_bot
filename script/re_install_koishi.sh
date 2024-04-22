@@ -10,4 +10,4 @@ echo 1秒后开始重装koishi,数据将丢失！！ctrl+c结束运行
 
 echo "正在重装 koishi"
 rm ~/koishi -rf
-bash -c "$(curl -L https://my.initencunter.com/koishi.sh)"
+bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/koishi.sh)"
