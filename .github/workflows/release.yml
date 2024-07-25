@@ -1,0 +1,35 @@
+name: Release Cli
+
+on:
+  push:
+      tags:
+        - 'v*'
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: release ${{ matrix.target }}
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps: 
+
+      - name: Download | Download CI script 
+        run: |
+          curl -L -o ci.sh https://raw.githubusercontent.com/initialencounter/koimux_bot/master/script/ci.sh
+          ls -la
+          cat ci.sh
+          
+      - name: Build | Build
+        run: |
+          bash ci.sh
+
+      - name: Archive | Archive
+        run: |
+          cd koimux
+          tar czvf koimux-${GITHUB_REF#refs/tags/}.tar.gz data
+
+      - name: Create Release Draft and Upload Artifacts
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: koimux-${GITHUB_REF#refs/tags/}.tar.gz
