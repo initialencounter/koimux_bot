@@ -27,6 +27,7 @@ jobs:
         run: |
           cd koimux
           TAG_NAME="${GITHUB_REF#refs/tags/}"
+          echo "TAG_NAME=${TAG_NAME}" >> $GITHUB_ENV
           tar czf "koimux-${TAG_NAME}.tar.gz" data
           ls -la
 
@@ -34,4 +35,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: koimux-${{ github.ref#refs/tags/ }}.tar.gz
+          files: koimux-${{ env.TAG_NAME }}.tar.gz
