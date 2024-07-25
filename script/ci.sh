@@ -13,7 +13,7 @@ tar zxf koimux-full-base.tar.gz -C koimux-full
 echo "安装 chromium"
 version=$(curl -Ls "https://api.github.com/repos/termux-user-repository/chromium-builder/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 curl -L -o chromium-linux-aarch64.zip https://github.com/termux-user-repository/chromium-builder/releases/download/${version}/chromium-v${version}-linux-aarch64.zip
-unzip -q chromium-linux-aarch64.zip koimux-full/data/data/com.termux/files/usr/lib/chromium
+unzip -q chromium-linux-aarch64.zip -d koimux-full/data/data/com.termux/files/usr/lib/chromium
 
 echo "升级 nodejs"
 version=$(curl -L https://grimler.se/termux-packages-24/dists/stable/main/binary-aarch64/Packages | grep '^Package: nodejs-lts' -A 10 | grep '^Version:' | awk '{print $2}')
