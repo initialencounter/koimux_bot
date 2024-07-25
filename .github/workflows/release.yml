@@ -30,9 +30,14 @@ jobs:
           echo "TAG_NAME=${TAG_NAME}" >> $GITHUB_ENV
           tar czf "koimux-${TAG_NAME}.tar.gz" data
           ls -la
+          cd ../koimux-full
+          tar czf "koimux-full-${TAG_NAME}.tar.gz" data
+          ls -la
 
       - name: Create Release Draft and Upload Artifacts
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: koimux/koimux-${{ env.TAG_NAME }}.tar.gz
+          files: |
+            koimux/koimux-${{ env.TAG_NAME }}.tar.gz
+            koimux-full/koimux-full-${{ env.TAG_NAME }}.tar.gz
