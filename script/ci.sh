@@ -9,7 +9,7 @@ tar zxf koimux-base.tar.gz -C koimux
 
 echo "升级 nodejs"
 version=$(curl -L https://grimler.se/termux-packages-24/dists/stable/main/binary-aarch64/Packages | grep '^Package: nodejs-lts' -A 10 | grep '^Version:' | awk '{print $2}')
-curl -L -o nodejs.deb https://grimler.se/termux-packages-24/pool/main/n/nodejs/nodejs_${version}_aarch64.deb
+curl -L -o nodejs.deb https://grimler.se/termux-packages-24/pool/main/n/nodejs-lts/nodejs-lts_${version}_aarch64.deb
 dpkg -x nodejs.deb koimux
 
 echo "安装 koishi"
