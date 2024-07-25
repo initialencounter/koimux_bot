@@ -15,7 +15,7 @@ dpkg -x nodejs.deb koimux
 echo "安装 koishi"
 version=$(curl -Ls "https://api.github.com/repos/koishijs/boilerplate/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 curl -L -o boilerplate.zip https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate/releases/download/${version}/boilerplate-${version}-linux-arm64-node20.zip
-unzip boilerplate.zip -d koimux/data/data/com.termux/files/home/koishi
+unzip -q boilerplate.zip -d koimux/data/data/com.termux/files/home/koishi
 
 echo "允许局域网访问"
 sed -Ei 's/(([[:space:]]*)maxPort.*)/\1\n\2host: 0.0.0.0/' koimux/data/data/com.termux/files/home/koishi/koishi.yml
