@@ -28,7 +28,7 @@ jobs:
           cd koimux
           TAG_NAME="${GITHUB_REF#refs/tags/}"
           echo "TAG_NAME=${TAG_NAME}" >> $GITHUB_ENV
-          tar czf "koimux-${TAG_NAME}.tar.gz" data
+          tar czf "koimux-${TAG_NAME}-lite.tar.gz" data
           ls -la
           cd ../koimux-full
           tar czf "koimux-full-${TAG_NAME}.tar.gz" data
@@ -39,5 +39,5 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            koimux/koimux-${{ env.TAG_NAME }}.tar.gz
+            koimux/koimux-${{ env.TAG_NAME }}-lite.tar.gz
             koimux-full/koimux-full-${{ env.TAG_NAME }}.tar.gz
