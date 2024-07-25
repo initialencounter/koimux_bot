@@ -5,7 +5,7 @@ curl -L -o koimux-base.tar.gz https://github.com/initialencounter/koimux_bot/rel
 
 echo "解压底包"
 mkdir koimux
-tar zxvf koimux-base.tar.gz -C koimux
+tar zxf koimux-base.tar.gz -C koimux
 
 echo "升级 nodejs"
 version=$(curl -L https://grimler.se/termux-packages-24/dists/stable/main/binary-aarch64/Packages | grep '^Package: nodejs-lts' -A 10 | grep '^Version:' | awk '{print $2}')
