@@ -1,4 +1,4 @@
-name: Release Cli
+name: Release Ci
 
 on:
   push:
@@ -35,4 +35,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: koimux-${{ env.TAG_NAME }}.tar.gz
+          files: koimux/koimux-${{ env.TAG_NAME }}.tar.gz
