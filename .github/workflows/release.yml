@@ -31,7 +31,7 @@ jobs:
           tar czf "koimux-${TAG_NAME}-lite.tar.gz" data
           ls -la
           cd ../koimux-full
-          tar czf "koimux-full-${TAG_NAME}.tar.gz" data
+          tar czf "koimux-${TAG_NAME}-full.tar.gz" data
           ls -la
 
       - name: Create Release Draft and Upload Artifacts
@@ -40,4 +40,4 @@ jobs:
         with:
           files: |
             koimux/koimux-${{ env.TAG_NAME }}-lite.tar.gz
-            koimux-full/koimux-full-${{ env.TAG_NAME }}.tar.gz
+            koimux-full/koimux-${{ env.TAG_NAME }}-full.tar.gz
