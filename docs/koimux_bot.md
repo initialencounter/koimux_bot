@@ -9,16 +9,19 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/k
 ```
 
 ### 启动 koishi
+
 ```bash
 koi start
 ```
 
 ### 停止 koishi
+
 ```bash
 koi stop
 ```
 
 ### 重装 koishi
+
 ```bash
 koi reset
 ```
@@ -28,12 +31,15 @@ koi reset
 ### 安装 ffmpeg
 
 发送语音可能需要安装该软件
+
 ```bash
 pkg i ffmpeg -y
 ```
+
 ### 安装 chromium
 
 部分插件要使用 chromium 渲染图片
+
 ```bash
 pkg i x11-repo -y
 pkg rei tur-repo -y
