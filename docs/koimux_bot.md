@@ -5,6 +5,7 @@
 ### 安装 koishi
 
 ```bash
+pkg upgrade;
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/koishi.sh)"
 ```
 
@@ -49,6 +50,7 @@ pkg i chromium -y
 ### 我全都要
 
 ```bash
+pkg upgrade;
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/full.sh)"
 ```
 
