@@ -35,7 +35,7 @@ bash -c "$(curl -L https://raw.githubusercontent.com/koishi-shangxue-plugins/koi
 
 > 如果遇到确认对话框，点击【确认】
 
-![切换清华源](../assets/koimuxTUI/2026-02-23_17-53-24.png)
+![切换清华源](../../assets/koimuxTUI/2026-02-23_17-53-24.png)
 
 ### 2. 更新包管理器
 
