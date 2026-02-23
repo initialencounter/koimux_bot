@@ -1,17 +1,16 @@
----
-title: Koishi 快速安装
-authors: initencunter
-tags: [Koishi, Termux, 安装]
----
-
 # Koishi 快速安装
 
 在 Termux 上快速部署 Koishi。
 
 ## 安装 Koishi
 
+依次执行以下内容：
+
 ```bash
 pkg upgrade;
+```
+
+```bash
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/koishi.sh)"
 ```
 
@@ -51,8 +50,3 @@ pkg i chromium -y
 pkg upgrade;
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/full.sh)"
 ```
-
-## 参考资源
-
-- [Koishi 官方](https://github.com/koishijs/koishi)
-- [ZeroTermux 下载](https://od.ixcmstudio.cn/repository/main/ZeroTermux/)

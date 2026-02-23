@@ -29,8 +29,8 @@
     "text": "脚本工具",
     "items": [
       {
-        "text": "Koishi Manager (koimuxTUI)",
-        "link": "/scripts/koimuxTUI"
+        "text": "koimuxTUI",
+        "link": "/scripts/koimuxTUI/koimuxTUI"
       }
     ]
   }

@@ -1,6 +1,6 @@
 {
   "title": "koimux_bot",
-  "description": "是小学基于 Koishi 开发的各种插件！",
+  "description": "在手机上部署 Koishi 的完整工具集",
   "ignoreDeadLinks": true,
   "base": "/koimux_bot/",
   "head": [
@@ -21,13 +21,13 @@
   ],
   "themeConfig": {
     "socialLinks": {
-      "github": "https://github.com/shangxueink/koimux_bot"
+      "github": "https://github.com/initialencounter/koimux_bot"
     },
     "lastUpdated": {
       "text": "上次更新"
     },
     "editLink": {
-      "pattern": "https://github.com/shangxueink/koimux_bot/edit/main/docs/:path",
+      "pattern": "https://github.com/initialencounter/koimux_bot/edit/main/docs/:path",
       "text": "在 GitHub 上编辑此页"
     },
     "logo": "https://avatars.githubusercontent.com/u/109729945"

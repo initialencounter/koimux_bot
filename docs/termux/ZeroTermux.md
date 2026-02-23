@@ -1,12 +1,8 @@
----
-title: ZeroTermux 入坑指南
-authors: initencunter
-tags: [Termux, 教程]
----
-
 # ZeroTermux 入坑指南
 
-ZeroTermux 是基于 Termux 二次开发的 Android 终端应用程序和 Linux 环境。相较于原版 Termux，ZeroTermux 集成了备份恢复、容器切换、文件管理器等实用功能，对新手非常友好。
+ZeroTermux 是基于 Termux 二次开发的 Android 终端应用程序和 Linux 环境。
+
+相较于原版 Termux，ZeroTermux 集成了备份恢复、容器切换、文件管理器等实用功能，对新手非常友好。
 
 ::: tip 说明
 下文中的 Termux 均指代 ZeroTermux
@@ -16,15 +12,17 @@ ZeroTermux 是基于 Termux 二次开发的 Android 终端应用程序和 Linux 
 
 ### 更换镜像源
 
-| 步骤 | 操作                   |
-| ---- | ---------------------- |
-| 1    | 按音量上键             |
-| 2    | 点击"切换源"           |
-| 3    | 选择"清华源"或"北京源" |
-| 4    | 遇到 yes/no 全选 y     |
+| 步骤 | 操作                                |
+| ---- | ----------------------------------- |
+| 1    | 按音量上键                          |
+| 2    | 在 "常用功能" 下找到并点击 "切换源" |
+| 3    | 选择 "清华源" 或 "北京源"           |
+| 4    | 遇到 `yes/no` 全选 `y`              |
 
 ::: warning 注意
-该方法只适用于 Termux 会话中。若处于 proot 容器内，请先输入 `exit` 退出容器。
+该方法只适用于 Termux 会话中。
+
+若处于 proot 容器内，请先输入 `exit` 退出容器。
 :::
 
 ## 区分 proot 容器
@@ -37,6 +35,7 @@ ZeroTermux 是基于 Termux 二次开发的 Android 终端应用程序和 Linux 
 | `$`    | 容器外 | 当前在 Termux 会话  |
 
 ![处于proot容器](../assets/termux/1.png)
+
 ![不处于proot容器](../assets/termux/2.png)
 
 ### 方法二：查看用户
@@ -95,6 +94,7 @@ bash buster-arm64.sh
 ## 恢复容器
 
 ::: warning 前提条件
+
 - 必须在 Termux 会话中操作
 - 恢复包必须位于 `/sdcard/xinhao/data` 目录
 :::
@@ -108,6 +108,7 @@ bash buster-arm64.sh
 | 5    | 输入新的容器名称 |
 
 ::: tip 建议
+
 - 容器命名要清晰明了
 - 不用的容器及时删除，释放存储空间
 :::
@@ -131,7 +132,3 @@ ZeroTermux 集成了强大的文件管理器，可以直接修改容器内的文
 打开插件后，在右侧菜单选择"访问 Utermux 文件"。
 
 ![访问Utermux文件](../assets/termux/5.png)
-
-## 相关文档
-
-- [安装 Debian 容器](./install_debian)

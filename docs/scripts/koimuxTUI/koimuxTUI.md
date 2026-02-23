@@ -22,17 +22,24 @@ bash -c "$(curl -L https://raw.githubusercontent.com/koishi-shangxue-plugins/koi
 
 建议使用 **Zero Termux**，它提供了更好的 Termux 体验和快捷功能。
 
-- 下载 Zero Termux：[GitHub 发布页](https://github.com/hanxinhao000/ZeroTermux/releases)
+- [Zero Termux - 镜像下载](https://od.ixcmstudio.cn/repository/main/ZeroTermux/)
+- [Zero Termux - GitHub 发布页](https://github.com/hanxinhao000/ZeroTermux/releases)
 
 ## 初始设置
 
 ### 1. 切换源
 
 - 打开 Zero Termux
-- 按音量上键，进入 Zero Termux 快捷交互菜单
-- 依次选择【常用功能】→【切换源】→【清华源】
+- 按【音量上键】，进入 Zero Termux 快捷交互菜单
+- 依次点击【常用功能】→【切换源】→【清华源】
+
+> 如果遇到确认对话框，点击【确认】
+
+![切换清华源](../assets/koimuxTUI/2026-02-23_17-53-24.png)
 
 ### 2. 更新包管理器
+
+切换完清华源后，
 
 在 Termux 中运行以下命令：
 
@@ -40,9 +47,11 @@ bash -c "$(curl -L https://raw.githubusercontent.com/koishi-shangxue-plugins/koi
 pkg update -y
 ```
 
+> 如果遇到确认步骤，请输入 `Y` ，并回车确认
+
 ### 3. 安装 Koishi Manager
 
-运行以下命令下载并运行脚本：
+运行以下命令 下载并运行脚本：
 
 ```bash
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/koimuxTUI.sh)"
@@ -68,7 +77,11 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/k
 - 完成创建后，Koishi 会自动启动，并在浏览器中打开 Web UI
 
 ::: tip 提示
-除非你需要多开实例，否则不要修改默认选项。如果多开实例，请确保实例目录名称唯一。
+除非你需要多开实例，否则不要修改默认选项。
+
+如果多开实例，请确保实例目录名称唯一。
+
+例如，如果已经创建了`koishi-app`，再次创建koishi实例时，请务必使用其他项目名称，例如 `koishi-app2`，否则会导致数据被覆盖而丢失！
 :::
 
 ### 3. 实例目录
