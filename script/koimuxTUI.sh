@@ -1,5 +1,75 @@
 #!/bin/bash
 
+# 脚本源 URL
+SCRIPT_SOURCE_URL="https://gitee.com/initencunter/koimux_bot/raw/master/script/koimuxTUI.sh"
+
+# 初始化：切换到 HOME 目录
+cd "$HOME" || exit 1
+
+# 自动注册快捷指令
+register_shortcut() {
+    local shell_rc=""
+    if [ -f "$HOME/.bashrc" ]; then
+        shell_rc="$HOME/.bashrc"
+    elif [ -f "$HOME/.zshrc" ]; then
+        shell_rc="$HOME/.zshrc"
+    else
+        shell_rc="$HOME/.bashrc"
+    fi
+
+    # 清除当前 shell 中的旧别名缓存
+    unalias koimux 2>/dev/null || true
+
+    # 删除配置文件中的旧别名
+    sed -i '/alias koimux=/d' "$shell_rc" 2>/dev/null || true
+
+    # 注册新的快捷指令（使用变量）
+    echo "alias koimux=\"bash -c \\\"\\\$(curl -L $SCRIPT_SOURCE_URL)\\\"\"" >> "$shell_rc"
+
+    # 重新加载配置文件
+    source "$shell_rc"
+
+    clear
+    echo "=========================================="
+    echo "快捷指令 'koimux' 已注册并生效！"
+    echo "脚本源: $SCRIPT_SOURCE_URL"
+    echo "=========================================="
+    read -n 1 -s -r -p "按任意键继续..."
+    echo
+}
+
+# 每次运行都注册快捷指令（覆写旧的）
+register_shortcut
+
+# 检测架构
+REAL_ARCH=$(getprop ro.product.cpu.abi 2>/dev/null || echo "unknown")
+UNAME_ARCH=$(uname -m)
+
+# 检测是否为 x86/x86_64 架构
+if [[ "$REAL_ARCH" == "x86_64" ]] || [[ "$REAL_ARCH" == "x86" ]]; then
+    clear
+    echo "=========================================="
+    echo "错误：不支持 x86/x86_64 架构"
+    echo "=========================================="
+    echo ""
+    echo "检测到您正在使用 x86/x86_64 架构的设备或模拟器。"
+    echo "此脚本不支持在该架构上运行。"
+    echo ""
+    echo "原因："
+    echo "  x86 架构的 Termux 在运行 Node.js 时"
+    echo "  存在已知的兼容性问题。"
+    echo ""
+    echo "建议：使用 ARM64 (aarch64) 架构的真机设备"
+    echo ""
+    echo "检测到的架构信息："
+    echo "  真实架构: $REAL_ARCH"
+    echo "  系统报告: $UNAME_ARCH"
+    echo "=========================================="
+    echo ""
+    read -n 1 -s -r -p "按任意键退出..."
+    exit 1
+fi
+
 # 检查并安装 dialog 工具
 if ! command -v dialog &> /dev/null; then
     pkg install dialog -y
@@ -62,6 +132,26 @@ function confirm_return {
     echo
 }
 
+# 快速关闭 auth 插件
+disable_auth_plugin() {
+    if ! KOISHI_APP_DIR=$(select_koishi_instance); then
+        return
+    fi
+
+    local config_file="$KOISHI_APP_DIR/koishi.yml"
+    if [ ! -f "$config_file" ]; then
+        dialog --msgbox "未找到 koishi.yml 文件！" 6 50
+        return
+    fi
+
+    # 匹配格式为 "    auth:随机字符:" 的行，在前面添加波浪线
+    if sed -i 's/^\(    \)auth:\([a-z0-9]\+\):$/\1~auth:\2:/' "$config_file" 2>/dev/null; then
+        dialog --msgbox "auth 插件已关闭！\n请重启 Koishi 实例生效。" 7 50
+    else
+        dialog --msgbox "关闭 auth 插件失败！" 6 50
+    fi
+}
+
 # 运行命令并展示输出 (切换到终端)
 run_command() {
     local cmd="$1"
@@ -99,7 +189,7 @@ function install_dependencies {
                         3 "安装 libexpat" \
                         4 "安装 chromium" \
                         5 "安装 ffmpeg" \
-                        6 "安装 nodejs-lts" \
+                        6 "安装 nodejs" \
                         7 "返回主菜单" \
                         3>&1 1>&2 2>&3)
 
@@ -136,11 +226,17 @@ function install_dependencies {
                 ;;
             6)
                 clear
-                echo "正在安装 nodejs-lts，请稍候..."
-                pkg i nodejs-lts -y
+                echo "正在安装 nodejs，请稍候..."
+                pkg i nodejs -y
+
+                # 设置 npm 镜像
+                echo "设置 npm 镜像源..."
                 npm config set registry https://registry.npmmirror.com
-                npm i -g yarn
-                yarn config set registry https://registry.npmmirror.com
+
+                # 查看 npm 镜像
+                echo "当前 npm 镜像源："
+                npm config get registry
+
                 confirm_return
                 ;;
             7)
@@ -170,11 +266,7 @@ function create_koishi_instance {
     clear
     echo "正在创建 Koishi 实例，请按照提示进行操作..."
 
-    if ! command -v node &> /dev/null; then
-        echo "请先安装依赖 nodejs-lts"
-        exit 1
-    fi
-    yarn create koishi
+    npm init koishi@latest
 
     # 退出脚本，不再返回 UI
     exit 0
@@ -205,44 +297,48 @@ function koishi_control {
         choice=$(dialog --clear --backtitle "Koishi Manager" \
                         --title "Koishi 控制" \
                         --menu "请选择一个操作：" 18 60 10 \
-                        1 "启动 Koishi (yarn start)" \
-                        2 "整理依赖 (yarn)" \
-                        3 "重装依赖 (rm -rf node_modules && yarn install)" \
-                        4 "升级全部依赖 (yarn up)" \
-                        5 "以开发模式启动 (yarn dev)" \
-                        6 "编译全部源码 (yarn build)" \
-                        7 "依赖去重 (yarn dedupe)" \
-                        8 "删除 Koishi 实例" \
-                        9 "返回主菜单" \
+                        1 "启动 Koishi (npm start)" \
+                        2 "整理依赖 (npm install)" \
+                        3 "重装依赖 (rm -rf node_modules && npm install)" \
+                        4 "升级全部依赖 (npm update)" \
+                        5 "以开发模式启动 (npm run dev)" \
+                        6 "编译全部源码 (npm run build)" \
+                        7 "依赖去重 (npm dedupe)" \
+                        8 "关闭 auth 插件" \
+                        9 "删除 Koishi 实例" \
+                        0 "返回主菜单" \
                         3>&1 1>&2 2>&3)
 
         case $choice in
             1)
-                run_command "yarn start" "$KOISHI_APP_DIR" "启动 Koishi"
+                run_command "npm start" "$KOISHI_APP_DIR" "启动 Koishi"
                 ;;
             2)
-                run_command "yarn" "$KOISHI_APP_DIR" "整理依赖"
+                run_command "npm install" "$KOISHI_APP_DIR" "整理依赖"
                 ;;
             3)
-                run_command "rm -rf node_modules && yarn install" "$KOISHI_APP_DIR" "重装依赖"
+                run_command "rm -rf node_modules && npm install" "$KOISHI_APP_DIR" "重装依赖"
                 ;;
             4)
-                run_command "yarn up" "$KOISHI_APP_DIR" "升级全部依赖"
+                run_command "npm update" "$KOISHI_APP_DIR" "升级全部依赖"
                 ;;
             5)
-                run_command "yarn dev" "$KOISHI_APP_DIR" "开发模式启动"
+                run_command "npm run dev" "$KOISHI_APP_DIR" "开发模式启动"
                 ;;
             6)
-                run_command "yarn build" "$KOISHI_APP_DIR" "编译全部源码"
+                run_command "npm run build" "$KOISHI_APP_DIR" "编译全部源码"
                 ;;
             7)
-                run_command "yarn dedupe" "$KOISHI_APP_DIR" "依赖去重"
+                run_command "npm dedupe" "$KOISHI_APP_DIR" "依赖去重"
                 ;;
             8)
-                delete_koishi_instance
-                return # 删除后返回主菜单, 避免继续循环
+                disable_auth_plugin
                 ;;
             9)
+                delete_koishi_instance
+                return
+                ;;
+            0)
                 break
                 ;;
             *)
@@ -250,6 +346,59 @@ function koishi_control {
                 ;;
         esac
     done
+}
+
+# 查看当前脚本信息
+function show_script_info {
+    clear
+    echo "=========================================="
+    echo "        当前脚本信息"
+    echo "=========================================="
+    echo ""
+
+    # 1. 设备真实架构
+    REAL_ARCH=$(getprop ro.product.cpu.abi 2>/dev/null || echo "unknown")
+    echo "1. 设备真实架构: $REAL_ARCH"
+    echo ""
+
+    # 2. 脚本源地址
+    local shell_rc=""
+    if [ -f "$HOME/.bashrc" ]; then
+        shell_rc="$HOME/.bashrc"
+    elif [ -f "$HOME/.zshrc" ]; then
+        shell_rc="$HOME/.zshrc"
+    fi
+
+    SCRIPT_SOURCE="未注册"
+    if [ -n "$shell_rc" ] && [ -f "$shell_rc" ]; then
+        SCRIPT_SOURCE=$(grep "alias koimux=" "$shell_rc" 2>/dev/null | sed -n 's/.*curl -L \([^)]*\).*/\1/p' | head -1)
+        [ -z "$SCRIPT_SOURCE" ] && SCRIPT_SOURCE="未注册"
+    fi
+
+    echo "2. 脚本源地址:"
+    echo "   $SCRIPT_SOURCE"
+    echo ""
+
+    # 3. Node.js 和 npm 版本
+    echo "3. 环境版本信息:"
+    if command -v node &> /dev/null; then
+        NODE_VERSION=$(node -v 2>/dev/null || echo "未安装")
+        echo "   Node.js: $NODE_VERSION"
+    else
+        echo "   Node.js: 未安装"
+    fi
+
+    if command -v npm &> /dev/null; then
+        NPM_VERSION=$(npm -v 2>/dev/null || echo "未安装")
+        echo "   npm: $NPM_VERSION"
+    else
+        echo "   npm: 未安装"
+    fi
+
+    echo ""
+    echo "=========================================="
+
+    confirm_return
 }
 
 # 主菜单
@@ -261,7 +410,8 @@ function main_menu {
                         1 "安装依赖" \
                         2 "创建 Koishi 实例" \
                         3 "管理 Koishi 实例" \
-                        4 "退出" \
+                        4 "查看当前脚本信息" \
+                        5 "退出" \
                         3>&1 1>&2 2>&3)
 
         case $choice in
@@ -275,6 +425,9 @@ function main_menu {
                 koishi_control
                 ;;
             4)
+                show_script_info
+                ;;
+            5)
                 if dialog --clear --backtitle "Koishi Manager" \
                           --title "退出" \
                           --yesno "确定要退出吗？" 7 50; then
