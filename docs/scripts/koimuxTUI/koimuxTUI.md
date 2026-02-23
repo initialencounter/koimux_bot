@@ -15,7 +15,7 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/k
 或使用 GitHub 源：
 
 ```bash
-bash -c "$(curl -L https://raw.githubusercontent.com/koishi-shangxue-plugins/koishi-shangxue-apps/main/scripts/termux/koimuxTUI.sh)"
+bash -c "$(curl -L https://raw.githubusercontent.com/initialencounter/koimux_bot/refs/heads/master/script/koimuxTUI.sh)"
 ```
 
 ## 推荐环境
@@ -132,4 +132,4 @@ koimux
 
 如果遇到问题，请截图完整日志并反馈至项目仓库：
 
-- [GitHub Issues](https://github.com/shangxueink/koimux_bot/issues)
+- [GitHub Issues](https://github.com/initialencounter/koimux_bot/issues)
