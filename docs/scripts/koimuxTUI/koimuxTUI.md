@@ -4,6 +4,13 @@
 
 通过这个工具，你可以轻松安装依赖、创建和管理 Koishi 实例。
 
+## 推荐环境
+
+建议使用 **Zero Termux**，它提供了更好的 Termux 体验和快捷功能。
+
+- [Zero Termux - 镜像下载](https://od.ixcmstudio.cn/repository/main/ZeroTermux/)
+- [Zero Termux - GitHub 发布页](https://github.com/hanxinhao000/ZeroTermux/releases)
+
 ## 快速开始
 
 :::tip
@@ -25,13 +32,6 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/k
 ```bash
 bash -c "$(curl -L https://raw.githubusercontent.com/initialencounter/koimux_bot/refs/heads/master/script/koimuxTUI.sh)"
 ```
-
-## 推荐环境
-
-建议使用 **Zero Termux**，它提供了更好的 Termux 体验和快捷功能。
-
-- [Zero Termux - 镜像下载](https://od.ixcmstudio.cn/repository/main/ZeroTermux/)
-- [Zero Termux - GitHub 发布页](https://github.com/hanxinhao000/ZeroTermux/releases)
 
 ## 初始设置
 

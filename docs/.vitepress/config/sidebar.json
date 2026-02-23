@@ -41,5 +41,22 @@
         "link": "/scripts/koimuxTUI/chromium-config"
       }
     ]
+  },
+  {
+    "text": "相关链接",
+    "items": [
+      {
+        "text": "原本的博客教程",
+        "link": "https://doc.initenc.cn/docs/tutorial/termux/ZeroTermux"
+      },
+      {
+        "text": "GitHub 项目地址",
+        "link": "https://github.com/initialencounter/koimux_bot"
+      },
+      {
+        "text": "Gitee 镜像项目地址",
+        "link": "https://gitee.com/initencunter/koimux_bot"
+      }
+    ]
   }
 ]
