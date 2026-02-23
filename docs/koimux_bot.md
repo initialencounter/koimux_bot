@@ -2,7 +2,7 @@
 
 在手机上部署 Koishi
 
-### 安装 koishi
+## 安装 koishi
 
 ```bash
 pkg upgrade;

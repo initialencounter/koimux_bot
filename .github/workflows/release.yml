@@ -11,14 +11,14 @@ jobs:
     name: release ${{ matrix.target }}
     runs-on: ubuntu-latest
     continue-on-error: true
-    steps: 
+    steps:
 
-      - name: Download | Download CI script 
+      - name: Download | Download CI script
         run: |
           curl -L -o ci.sh https://raw.githubusercontent.com/initialencounter/koimux_bot/master/script/ci.sh
           ls -la
           cat ci.sh
-          
+
       - name: Build | Build
         run: |
           bash ci.sh

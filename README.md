@@ -1,1 +1,0 @@
-docs/koimux_bot.md
