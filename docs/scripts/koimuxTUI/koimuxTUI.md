@@ -6,6 +6,14 @@
 
 ## 快速开始
 
+:::tip
+下文中的 Termux 均指代 Zero Termux
+:::
+
+:::tip
+以下命令复制后，可在 Termux 页面长按选择`Paste`或`粘贴`，然后回车即可生效。
+:::
+
 使用以下指令运行脚本：
 
 ```bash
@@ -104,7 +112,7 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/k
 #### 2. 备份实例
 
 - 按音量上键，进入 Zero Termux 快捷交互菜单
-- 依次选择【备份/恢复】→【tar.gz】→【确定】
+- 依次选择【常用功能】→【备份/恢复】→【tar.gz】→【确定】
 
 ## 再次启动 Koishi
 

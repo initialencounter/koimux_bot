@@ -31,6 +31,14 @@
       {
         "text": "koimuxTUI",
         "link": "/scripts/koimuxTUI/koimuxTUI"
+      },
+      {
+        "text": "FFmpeg 配置",
+        "link": "/scripts/koimuxTUI/ffmpeg-config"
+      },
+      {
+        "text": "Chromium 配置",
+        "link": "/scripts/koimuxTUI/chromium-config"
       }
     ]
   }

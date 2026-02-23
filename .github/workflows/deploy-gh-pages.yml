@@ -3,7 +3,7 @@ name: Deploy VitePress Docs to GitHub Pages
 on:
   push:
     branches:
-      - main  # 在 main 分支推送时触发
+      - master  # 在 master 分支推送时触发
     paths:
       - 'docs/**' # 仅在 docs 目录下的文件发生更改时触发
   workflow_dispatch:  # 允许手动触发
@@ -13,11 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout main branch
+      - name: Checkout master branch
         uses: actions/checkout@v4
         with:
-          ref: main  # 检出 main 分支
-          path: main  # 检出到 main 目录
+          ref: master  # 检出 master 分支
+          path: master  # 检出到 master 目录
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -28,16 +28,16 @@ jobs:
         uses: actions/cache@v3
         id: cache-dependencies
         with:
-          path: main/node_modules
-          key: deps-${{ runner.os }}-${{ hashFiles('main/yarn.lock') }}
+          path: master/node_modules
+          key: deps-${{ runner.os }}-${{ hashFiles('master/yarn.lock') }}
 
       - name: Install Dependencies
         run: |
-          cd main
+          cd master
           yarn install # 不使用 --frozen-lockfile，允许更新 yarn.lock
 
       - name: Build VitePress Site
-        run: cd main && yarn build
+        run: cd master && yarn build
 
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
@@ -54,7 +54,7 @@ jobs:
       - name: Copy build output to gh-pages
         run: |
           rm -rf gh-pages/docs/*  # 清空 gh-pages/docs 目录
-          cp -r main/docs/.vitepress/dist/* gh-pages/docs/  # 复制构建输出
+          cp -r master/docs/.vitepress/dist/* gh-pages/docs/  # 复制构建输出
 
       - name: Commit and push changes to gh-pages
         run: |
