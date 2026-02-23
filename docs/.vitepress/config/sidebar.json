@@ -16,7 +16,11 @@
         "link": "/termux/ZeroTermux"
       },
       {
-        "text": "Termux 安装 Debian",
+        "text": "Koishi 快速安装",
+        "link": "/termux/koishi-quick-install"
+      },
+      {
+        "text": "安装 Debian 容器",
         "link": "/termux/install_debian"
       }
     ]
