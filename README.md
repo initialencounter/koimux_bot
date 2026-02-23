@@ -4,4 +4,4 @@
 
 具体教程请见文档
 
-->
+-> <https://initialencounter.github.io/koimux_bot/>
