@@ -4,3 +4,5 @@
 *.ntvs*
 *.njsproj
 *.sln
+node_modules
+docs/.vitepress/cache

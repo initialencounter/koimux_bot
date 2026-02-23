@@ -1,0 +1,23 @@
+{
+  "name": "koimux-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@cordisjs/vitepress": "^3.0.0",
+    "@unocss/reset": "^0.58.0",
+    "@vueuse/core": "^10.11.0",
+    "typescript": "^5.9.3",
+    "unocss": "^0.58.0",
+    "vitepress": "^1.6.4",
+    "vue": "3.5.28",
+    "vue-tsc": "^3.2.5"
+  },
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "start": "vitepress preview docs",
+    "typecheck": "vue-tsc --noEmit"
+  }
+}
