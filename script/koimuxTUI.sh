@@ -296,17 +296,18 @@ function koishi_control {
     while true; do
         choice=$(dialog --clear --backtitle "Koishi Manager" \
                         --title "Koishi 控制" \
-                        --menu "请选择一个操作：" 18 60 10 \
-                        1 "启动 Koishi (npm start)" \
-                        2 "整理依赖 (npm install)" \
-                        3 "重装依赖 (rm -rf node_modules && npm install)" \
-                        4 "升级全部依赖 (npm update)" \
-                        5 "以开发模式启动 (npm run dev)" \
-                        6 "编译全部源码 (npm run build)" \
-                        7 "依赖去重 (npm dedupe)" \
-                        8 "关闭 auth 插件" \
-                        9 "删除 Koishi 实例" \
-                        0 "返回主菜单" \
+                        --menu "请选择一个操作：" 22 70 14 \
+                        1  "── 启动 Koishi (npm start)" \
+                        2  "── 依赖整理 (npm install)" \
+                        3  "── 依赖整理[忽略冲突] (npm install --legacy-peer-deps)" \
+                        4  "── 依赖重装 (rm node_modules && npm install)" \
+                        5  "── 依赖重装[忽略冲突] (rm node_modules && npm i --legacy)" \
+                        6  "── 依赖升级 (npm update)" \
+                        7  "── 依赖去重 (npm dedupe)" \
+                        8  "── 关闭 auth 插件" \
+                        9  "── 删除 Koishi 实例" \
+                        10 "── 执行自定义指令" \
+                        0  "── 返回主菜单" \
                         3>&1 1>&2 2>&3)
 
         case $choice in
@@ -314,19 +315,19 @@ function koishi_control {
                 run_command "npm start" "$KOISHI_APP_DIR" "启动 Koishi"
                 ;;
             2)
-                run_command "npm install" "$KOISHI_APP_DIR" "整理依赖"
+                run_command "npm install" "$KOISHI_APP_DIR" "依赖整理"
                 ;;
             3)
-                run_command "rm -rf node_modules && npm install" "$KOISHI_APP_DIR" "重装依赖"
+                run_command "npm install --legacy-peer-deps" "$KOISHI_APP_DIR" "依赖整理[忽略冲突]"
                 ;;
             4)
-                run_command "npm update" "$KOISHI_APP_DIR" "升级全部依赖"
+                run_command "rm -rf node_modules && npm install" "$KOISHI_APP_DIR" "依赖重装"
                 ;;
             5)
-                run_command "npm run dev" "$KOISHI_APP_DIR" "开发模式启动"
+                run_command "rm -rf node_modules && npm install --legacy-peer-deps" "$KOISHI_APP_DIR" "依赖重装[忽略冲突]"
                 ;;
             6)
-                run_command "npm run build" "$KOISHI_APP_DIR" "编译全部源码"
+                run_command "npm update" "$KOISHI_APP_DIR" "依赖升级"
                 ;;
             7)
                 run_command "npm dedupe" "$KOISHI_APP_DIR" "依赖去重"
@@ -338,11 +339,27 @@ function koishi_control {
                 delete_koishi_instance
                 return
                 ;;
+            10)
+                local custom_dir
+                if ! custom_dir=$(select_koishi_instance); then
+                    continue
+                fi
+                clear
+                echo "=========================================="
+                echo "  执行自定义指令"
+                echo "  目录: $custom_dir"
+                echo "=========================================="
+                echo "请输入要执行的指令（按回车执行）："
+                read -r custom_cmd
+                if [ -n "$custom_cmd" ]; then
+                    run_command "$custom_cmd" "$custom_dir" "自定义指令"
+                fi
+                ;;
             0)
                 break
                 ;;
             *)
-               break
+                break
                 ;;
         esac
     done
