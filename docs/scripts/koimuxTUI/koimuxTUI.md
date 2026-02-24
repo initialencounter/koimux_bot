@@ -130,6 +130,8 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/k
 koimux
 ```
 
+> 以后也都用这个指令 来重新运行脚本哦~
+
 ### 2. 管理实例
 
 - 在主菜单中，选择【3 管理 Koishi 实例】
