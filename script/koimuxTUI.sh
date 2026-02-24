@@ -418,6 +418,32 @@ function show_script_info {
     confirm_return
 }
 
+# 查看文档
+function open_docs {
+    clear
+    echo "=========================================="
+    echo "  正在打开文档..."
+    echo "  https://koimux.initenc.cn/"
+    echo "=========================================="
+    # 使用 termux-open-url 在浏览器中打开文档
+    if command -v termux-open-url &> /dev/null; then
+        termux-open-url "https://koimux.initenc.cn/"
+        echo "已在浏览器中打开文档！"
+    else
+        echo "未找到 termux-open-url，尝试使用 xdg-open..."
+        if command -v xdg-open &> /dev/null; then
+            xdg-open "https://koimux.initenc.cn/"
+            echo "已在浏览器中打开文档！"
+        else
+            echo "无法自动打开浏览器，请手动访问："
+            echo "  https://koimux.initenc.cn/"
+        fi
+    fi
+    echo ""
+    read -n 1 -s -r -p "按任意键返回主菜单..."
+    echo
+}
+
 # 主菜单
 function main_menu {
     while true; do
@@ -428,7 +454,8 @@ function main_menu {
                         2 "创建 Koishi 实例" \
                         3 "管理 Koishi 实例" \
                         4 "查看当前脚本信息" \
-                        5 "退出" \
+                        5 "查看文档" \
+                        6 "退出" \
                         3>&1 1>&2 2>&3)
 
         case $choice in
@@ -445,6 +472,9 @@ function main_menu {
                 show_script_info
                 ;;
             5)
+                open_docs
+                ;;
+            6)
                 if dialog --clear --backtitle "Koishi Manager" \
                           --title "退出" \
                           --yesno "确定要退出吗？" 7 50; then
