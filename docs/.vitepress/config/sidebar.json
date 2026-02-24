@@ -33,6 +33,10 @@
         "link": "/scripts/koimuxTUI/koimuxTUI"
       },
       {
+        "text": "TUI控制菜单",
+        "link": "/scripts/koimuxTUI/koishi-control"
+      },
+      {
         "text": "FFmpeg 配置",
         "link": "/scripts/koimuxTUI/ffmpeg-config"
       },

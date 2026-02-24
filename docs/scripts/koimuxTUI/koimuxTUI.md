@@ -72,7 +72,9 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/k
 - 在脚本的主菜单中，选择【1 安装依赖】
 - 依次安装所有依赖项（x11-repo、tur-repo、libexpat、chromium、ffmpeg、nodejs 等）
 
-::: warning 注意
+:::warning
+注意
+
 此步骤需要科学上网！
 :::
 
@@ -84,7 +86,9 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/k
 - 推荐小白用户一路回车，使用默认选项
 - 完成创建后，Koishi 会自动启动，并在浏览器中打开 Web UI
 
-::: tip 提示
+:::tip
+提示
+
 除非你需要多开实例，否则不要修改默认选项。
 
 如果多开实例，请确保实例目录名称唯一。
@@ -105,7 +109,9 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/k
 
 多次按下 `Ctrl + C`，确保所有 Koishi 进程已结束。
 
-::: details 如何按下 Ctrl + C？
+:::tip
+如何按下 Ctrl + C？
+
 点击 ZeroTermux 底部的 `Ctrl` 按钮为高亮状态，然后键盘键入 `C`，即可。
 :::
 

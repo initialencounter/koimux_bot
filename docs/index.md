@@ -2,7 +2,9 @@
 
 在手机上部署 Koishi 的完整工具集
 
-::: warning Termux 兼容性说明
+:::warning
+Termux 兼容性说明
+
 Termux 由于架构问题，不可避免会在环境上存在部分兼容性问题。
 :::
 
