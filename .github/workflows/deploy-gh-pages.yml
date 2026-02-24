@@ -40,8 +40,7 @@ jobs:
         run: cd master && yarn build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: master/docs/.vitepress/dist
-          publish_branch: gh-pages
+          branch: gh-pages
+          folder: master/docs/.vitepress/dist
