@@ -2,7 +2,7 @@
   "title": "koimux_bot",
   "description": "在手机上部署 Koishi 的完整工具集",
   "ignoreDeadLinks": true,
-  "base": "/koimux_bot/",
+  "base": "/",
   "head": [
     [
       "link",

@@ -45,3 +45,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: master/docs/.vitepress/dist
           publish_branch: gh-pages
+          cname: koimux.initenc.cn
