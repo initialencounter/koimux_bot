@@ -11,27 +11,11 @@
 - [Zero Termux - 镜像下载](https://od.ixcmstudio.cn/repository/main/ZeroTermux/)
 - [Zero Termux - GitHub 发布页](https://github.com/hanxinhao000/ZeroTermux/releases)
 
-## 快速开始
+:::info
+如果你执意使用 **原版termux**，那以下很多快捷键你将无法使用。
 
-:::tip
-下文中的 Termux 均指代 Zero Termux
+推荐使用与教程一致的 **Zero Termux**
 :::
-
-:::tip
-以下命令复制后，可在 Termux 页面长按选择`Paste`或`粘贴`，然后回车即可生效。
-:::
-
-使用以下指令运行脚本：
-
-```bash
-bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/koimuxTUI.sh)"
-```
-
-或使用 GitHub 源：
-
-```bash
-bash -c "$(curl -L https://raw.githubusercontent.com/initialencounter/koimux_bot/refs/heads/master/script/koimuxTUI.sh)"
-```
 
 ## 初始设置
 
@@ -41,21 +25,34 @@ bash -c "$(curl -L https://raw.githubusercontent.com/initialencounter/koimux_bot
 - 按【音量上键】，进入 Zero Termux 快捷交互菜单
 - 依次点击【常用功能】→【切换源】→【清华源】
 
-> 如果遇到确认对话框，点击【确认】
+![alt text](../../assets/koimuxTUI/2026-02-23_17-53-24.png)
 
-![切换清华源](../../assets/koimuxTUI/2026-02-23_17-53-24.png)
+:::tip
+如果遇到确认步骤，例如
+
+```log
+Do you want to continue? [Y/n]
+```
+
+请输入 `Y` ，并回车确认
+:::
+
+![alt text](../../assets/koimuxTUI/103c32351e212ac5a049eebeb5a9d465.jpg)
 
 ### 2. 更新包管理器
 
 切换完清华源后，
 
-在 Termux 中运行以下命令：
+在 Termux 中运行以下命令以更新**包管理器**：
 
 ```bash
 pkg update -y
+
 ```
 
-> 如果遇到确认步骤，请输入 `Y` ，并回车确认
+> 如果也遇到了类似的确认步骤，操作方法同上。
+
+---
 
 ### 3. 安装 Koishi Manager
 
@@ -65,40 +62,116 @@ pkg update -y
 bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/koimuxTUI.sh)"
 ```
 
+:::info
+以上为 **gitee源（国内直接访问）**，你也可以使用 github源，效果一致：
+
+```bash
+bash -c "$(curl -L https://raw.githubusercontent.com/initialencounter/koimux_bot/refs/heads/master/script/koimuxTUI.sh)"
+```
+
+:::
+
+---
+
+运行后会提示
+
+```log
+==========================================
+快捷指令 'koimux' 已注册并生效！
+脚本源: https://.../.../koimuxTUI.sh
+==========================================
+按任意键继续...
+```
+
+为**正常现象**，下次启动直接输入 `koimux` 即可启动啦~
+
+在此处按下任意键以继续。
+
+### 4. 架构不支持
+
+如果你看见类似 `不支持 x86/x86_64 架构` 的文字，请查看详情
+
+否则请略过此步
+
+<details>
+<summary><strong>不支持 x86/x86_64 架构</strong></summary>
+
+经过上述第三步的确认，部分机型可能会遇到此类输出：
+
+```log
+==========================================
+错误：不支持 x86/x86_64 架构
+==========================================
+
+检测到您正在使用 x86/x86_64 架构的设备或模拟器。
+此脚本不支持在该架构上运行。
+
+原因：
+  x86 架构的 Termux 在运行 Node.js 时
+  存在已知的兼容性问题。
+
+建议：使用 ARM64 (aarch64) 架构的真机设备
+
+检测到的架构信息：
+  真实架构: x86_64
+  系统报告: armv8
+==========================================
+
+按任意键退出...
+```
+
+这说明你正在使用 x86/x86_64 架构的设备或模拟器，需要使用 ARM64 (aarch64) 架构的真机设备以继续。
+
+</details>
+
 ## 使用步骤
 
 ### 1. 安装依赖
 
 - 在脚本的主菜单中，选择【1 安装依赖】
+
+![alt text](../../assets/koimuxTUI/b5d52ee3c075fc4d96ebfc637d13c689.jpg)
+
 - 依次安装所有依赖项（x11-repo、tur-repo、libexpat、chromium、ffmpeg、nodejs 等）
 
-:::warning
+:::danger
 注意
 
-此步骤需要科学上网！
+此步骤需要**科学上网**！（可以仅在此步使用VPN工具）
+
+建议使用 -> <https://github.com/MetaCubeX/ClashMetaForAndroid/releases>
 :::
 
 - 安装完依赖后，选择【7 返回主菜单】
 
+![alt text](../../assets/koimuxTUI/c5a112f48f84ed3ebf6ffaddad15b724.jpg)
+
 ### 2. 创建 Koishi 实例
 
-- 在主菜单中，选择【2 创建 Koishi 实例】
-- 推荐小白用户一路回车，使用默认选项
-- 完成创建后，Koishi 会自动启动，并在浏览器中打开 Web UI
+:::danger
+请务必看完整个步骤教程 再跟进实操
+
+以避免误操作、频繁切换窗口... ...
+:::
+
+1. 在主菜单中，选择【2 创建 Koishi 实例】
+2. 继续确认选择【Yes】
+3. 接下来以 **回车键** 为确认键，建议使用默认选项
+4. 经过多步确认、完成创建后，Koishi 会自动启动，并在浏览器中打开 WebUI
 
 :::tip
-提示
+**提示**
 
-除非你需要多开实例，否则不要修改默认选项。
+除非你需要创建多个koishi实例，否则不建议修改默认选项。
 
-如果多开实例，请确保实例目录名称唯一。
+如果希望多开实例，**请确保实例目录名称唯一！** 这很重要！
 
 例如，如果已经创建了`koishi-app`，再次创建koishi实例时，请务必使用其他项目名称，例如 `koishi-app2`，否则会导致数据被覆盖而丢失！
 :::
 
 ### 3. 实例目录
 
-- Koishi 实例默认存储在 `~/koishi/*/` 目录下
+- 本脚本创建的 Koishi 实例默认存储在 `~/koishi/*/` 目录下
 - 默认实例目录为 `~/koishi/koishi-app/`
 
 ## 备份与恢复
@@ -119,6 +192,8 @@ bash -c "$(curl -L https://gitee.com/initencunter/koimux_bot/raw/master/script/k
 
 - 按音量上键，进入 Zero Termux 快捷交互菜单
 - 依次选择【常用功能】→【备份/恢复】→【tar.gz】→【确定】
+
+![alt text](../../assets/koimuxTUI/screenshot_2026-03-09_23-12-05.png)
 
 ## 再次启动 Koishi
 

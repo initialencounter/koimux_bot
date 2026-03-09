@@ -4,6 +4,8 @@
 
 本页面介绍控制菜单中每个选项的用途和使用场景。
 
+![alt text](../../assets/koimuxTUI/fced9c2f1b8ce332242fbd4404fdcf11.jpg)
+
 ## 菜单总览
 
 | 编号 | 选项               | 执行的命令                                              |
@@ -84,7 +86,7 @@ npm error peer koishi-plugin-word-core@"^1.0.37" from koishi-plugin-word-core-gr
 
 当插件 A 要求依赖 X 的版本为 `^1.0.37`，但当前安装的是 `1.0.36` 时，npm 会拒绝安装并报 `ERESOLVE` 错误。
 
-`--legacy-peer-deps` 会跳过此检查，使用旧版 npm 的宽松解析策略完成安装。
+`--legacy-peer-deps` 会跳过此检查，使用 宽松解析策略 完成安装。
 :::
 
 ---
@@ -188,15 +190,17 @@ rm -rf <实例目录>
 永久删除选定的 Koishi 实例目录。
 
 :::danger
-危险操作
+**危险操作**
 
 此操作**不可恢复**！
 
 删除前请确保已备份重要数据：
 
-- 数据库文件（`data/` 目录）
+- 数据库文件（`data` 文件夹）
 
 - 配置文件（`koishi.yml`）
+
+- 项目依赖声明（`package.json`）
 
 :::
 

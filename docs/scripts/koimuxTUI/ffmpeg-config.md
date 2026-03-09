@@ -2,7 +2,7 @@
 
 ## 前置条件
 
-如果你已经按照 [koimuxTUI.md](./koimuxTUI.md) 完成了依赖安装，那么 FFmpeg 应该已经安装完成。
+如果你已经按照 [koimuxTUI.md](./koimuxTUI.md) 完成了**依赖安装**，那么 FFmpeg 应该已经安装完成。
 
 ## 验证 FFmpeg 安装
 

@@ -37,11 +37,15 @@
         "link": "/scripts/koimuxTUI/koishi-control"
       },
       {
-        "text": "FFmpeg 配置",
+        "text": "Market 插件配置",
+        "link": "/scripts/koimuxTUI/market-config"
+      },
+      {
+        "text": "FFmpeg 环境配置",
         "link": "/scripts/koimuxTUI/ffmpeg-config"
       },
       {
-        "text": "Chromium 配置",
+        "text": "Chromium 环境配置",
         "link": "/scripts/koimuxTUI/chromium-config"
       }
     ]
