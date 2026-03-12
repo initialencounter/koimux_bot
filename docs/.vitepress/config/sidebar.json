@@ -47,6 +47,10 @@
       {
         "text": "Chromium 环境配置",
         "link": "/scripts/koimuxTUI/chromium-config"
+      },
+      {
+        "text": "编辑 Termux 文件",
+        "link": "/scripts/koimuxTUI/termux-edit-files"
       }
     ]
   },
